@@ -8,13 +8,13 @@ for (const watts of [500, 600, 800]) {
     products.push({id:`${axis}-${watts}`,axis,type:'turbine',title:`${watts}W Wind Turbine`,power:`${watts}W`,voltage:'12V–48V',description:`A ${axis} axis wind turbine in the ${watts}W product range. Discuss your site conditions and electrical requirements to select an appropriate configuration.`});
   }
 }
-for (const axis of ['vertical', 'horizontal']) products.push({id:`${axis}-generator`,axis,type:'generator',title:`${axis === 'vertical' ? 'Vertical' : 'Horizontal'} Axis Generator`,power:'100W–500kW',voltage:'12V–440V',description:`Explore ${axis} axis generators across a 100W–500kW power range and 12V–440V voltage range. These figures describe the product family; individual models and available combinations require confirmation.`});
+for (const axis of ['vertical', 'horizontal']) products.push({id:`${axis}-generator`,axis,type:'generator',title:`${axis === 'vertical' ? 'Vertical' : 'Horizontal'} Axis Permanent Magnet Generator`,power:'100W–500kW',voltage:'12V–440V',description:`Explore ${axis} axis permanent magnet generators across a 100W–500kW power range and 12V–440V voltage range. These figures describe the product family; individual models and available combinations require confirmation.`});
 const grid = document.querySelector('#product-grid');
 const dialog = document.querySelector('#product-dialog');
 let lastDetailButton;
 function renderProducts(filter = 'all') {
-  const visible = products.filter(p => filter === 'all' || (filter === 'generator' ? p.type === 'generator' : p.axis === filter));
-  grid.innerHTML = visible.map(p => `<article class="product-card"><div class="product-art"><span class="product-tag">${p.type === 'generator' ? 'GENERATOR SERIES' : 'WIND ENERGY'}</span>${p.type === 'generator' ? generatorArt : p.axis === 'vertical' ? verticalArt : horizontalArt}</div><div class="product-body"><p class="product-category">${p.axis} axis · ${p.type === 'generator' ? 'Generator' : 'Wind turbine'}</p><h3>${p.title}</h3><div class="spec-row"><div><span>${p.type === 'generator' ? 'POWER RANGE' : 'RATED POWER'}</span><strong>${p.power}</strong></div><div><span>VOLTAGE RANGE</span><strong>${p.voltage}</strong></div></div><button class="detail-button" data-id="${p.id}" aria-label="View ${p.axis} axis ${p.title} details">Explore product <span>↗</span></button></div></article>`).join('');
+  const visible = products.filter(p => filter === 'all' || (filter === 'generator' ? p.type === 'generator' : p.type === 'turbine' && p.axis === filter));
+  grid.innerHTML = visible.map(p => `<article class="product-card"><div class="product-art"><span class="product-tag">${p.type === 'generator' ? 'PERMANENT MAGNET GENERATOR' : 'WIND ENERGY'}</span>${p.type === 'generator' ? generatorArt : p.axis === 'vertical' ? verticalArt : horizontalArt}</div><div class="product-body"><p class="product-category">${p.axis} axis · ${p.type === 'generator' ? 'Generator' : 'Wind turbine'}</p><h3>${p.title}</h3><div class="spec-row"><div><span>${p.type === 'generator' ? 'POWER RANGE' : 'RATED POWER'}</span><strong>${p.power}</strong></div><div><span>VOLTAGE RANGE</span><strong>${p.voltage}</strong></div></div><button class="detail-button" data-id="${p.id}" aria-label="View ${p.axis} axis product details">Explore product <span>↗</span></button></div></article>`).join('');
   document.querySelector('#product-count').textContent = `${visible.length} products`;
 }
 document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => {
@@ -29,22 +29,23 @@ grid.addEventListener('click', event => {
   document.querySelector('#dialog-title').textContent = p.title;
   document.querySelector('#dialog-description').textContent = p.description;
   document.querySelector('#dialog-specs').innerHTML = `<dt>Axis orientation</dt><dd>${p.axis === 'vertical' ? 'Vertical' : 'Horizontal'}</dd><dt>${p.type === 'generator' ? 'Power range' : 'Rated power'}</dt><dd>${p.power}</dd><dt>Voltage range</dt><dd>${p.voltage}</dd>`;
-  document.querySelector('#interest').value = p.type === 'generator' ? 'Generators — 100W to 500kW' : `${p.axis === 'vertical' ? 'Vertical' : 'Horizontal'} axis wind turbines`;
+  document.querySelector('#interest').value = p.type === 'generator' ? 'Permanent Magnet Generators — 100W to 500kW' : `${p.axis === 'vertical' ? 'Vertical' : 'Horizontal'} Axis Wind Turbines`;
   dialog.setAttribute('aria-labelledby', 'dialog-title');
   dialog.showModal();
 });
 document.querySelector('.close-dialog').addEventListener('click', () => dialog.close());
 dialog.addEventListener('click', e => {if(e.target === dialog){const r = dialog.getBoundingClientRect();if(e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) dialog.close();}});
 dialog.addEventListener('close', () => lastDetailButton?.focus());
-document.querySelector('#dialog-inquiry').addEventListener('click', () => dialog.close());
+document.querySelector('#dialog-inquiry').addEventListener('click', () => { dialog.close(); document.querySelector('#interest').focus({preventScroll:true}); });
 const toggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('#navigation');
 toggle.addEventListener('click', () => {const open = nav.classList.toggle('open');toggle.setAttribute('aria-expanded', String(open));toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');toggle.textContent = open ? '✕' : '☰';});
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && nav.classList.contains('open')) { toggle.click(); toggle.focus(); } });
 nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {nav.classList.remove('open');toggle.setAttribute('aria-expanded', 'false');toggle.setAttribute('aria-label', 'Open navigation');toggle.textContent = '☰';}));
 document.querySelector('#inquiry-form').addEventListener('submit', e => {
   e.preventDefault();
   const data = new FormData(e.target);
-  const text = `REWINDAGIC — PROJECT BRIEF\n\nName: ${data.get('name')}\nEmail: ${data.get('email')}\nInterest: ${data.get('interest')}\n\nProject details:\n${data.get('message')}\n\nPlease share this brief with your Rewindagic representative. This website has not submitted your inquiry.\n`;
+  const text = `Rewindagic — Project Brief\n\nName: ${data.get('name')}\nEmail: ${data.get('email')}\nInterest: ${data.get('interest')}\n\nProject details:\n${data.get('message')}\n\nPlease share this brief with your Rewindagic representative. This website has not submitted your inquiry.\n`;
   const url = URL.createObjectURL(new Blob([text], {type:'text/plain;charset=utf-8'}));
   const a = document.createElement('a');a.href = url;a.download = 'Rewindagic-project-brief.txt';document.body.append(a);a.click();a.remove();setTimeout(() => URL.revokeObjectURL(url), 1000);
   document.querySelector('#form-status').textContent = 'Your project brief is ready. Share the downloaded file with your representative. No inquiry has been sent.';
