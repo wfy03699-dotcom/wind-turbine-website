@@ -30,3 +30,19 @@ python3 -m http.server 8000
 修改 `script.js` 内的产品数据可更新产品。当前没有后端，不发送询盘，也不收集或上传表单信息；上线前可按实际业务接入询盘服务并补充真实联系信息。
 
 首页风电照片来自 Unsplash，字体来自 Google Fonts，需要联网加载；无网络时仍可使用系统字体、产品示意图和本地交互功能。正式商用前请确认素材使用权限及产品实际参数。
+
+## Product catalog and real photos
+
+`products.js` is the shared product catalog. All eight original products and their power/voltage ranges are retained. Each product has an `image` field, initially empty. Add authorized photographs under `assets/products/`, then set the corresponding product's `image` and `imageAlt` in `products.js`. Empty image fields display an explicitly labelled placeholder; no product photograph is fabricated. Product specifications are shared by quick views and `product.html?id=vertical-500` (replace the ID for other products). Unknown specifications display `Contact Us`; generator families show a power range rather than an invented individual rated power.
+
+## Netlify Forms deployment and notification test
+
+The current inquiry form replaces the older project-brief download described above. It uses a static HTML form named `product-inquiry`, POST submission, a `form-name` field, a honeypot, and a `/thank-you.html` action. It collects name, email, country, product, quantity and message. No backend credentials are stored in this repository.
+
+1. In Netlify, import this GitHub repository and select the desired branch. Leave the build command empty and publish directory as `.` (`netlify.toml` supplies it).
+2. Enable Netlify form detection for the project, then deploy/redeploy. Confirm that `product-inquiry` appears under **Forms**. If detection was disabled when the deployment ran, enable it and redeploy.
+3. In the site's Forms notification settings, add an **Email notification** for `product-inquiry`, using the actual recipient email. Interface labels may vary. No recipient is preconfigured by this code.
+4. On the deployed HTTPS site, choose a product, click **Get a Quote**, check its model is selected, and submit one clearly labelled test inquiry with an email address you control. Confirm the success page, then verify the record under Netlify **Forms → product-inquiry** and verify the recipient's inbox/spam folder. Check the spam submissions view if needed.
+5. Test an empty required field, invalid email, and quantity 0: the browser should block submission. Repeat a valid submission from a phone. Test all three product categories and a detail-page quote link.
+
+Python's local server and GitHub Pages do not process Netlify Forms. A local preview blocks submission with an explanation; deployment on Netlify with form detection enabled is required. Netlify form limits and spam filtering apply. Notification delivery and production form acceptance remain unverified until the deployed test above succeeds. A direct visit to the thank-you page proves neither submission nor notification delivery.
