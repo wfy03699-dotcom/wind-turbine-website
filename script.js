@@ -2,12 +2,13 @@
 const grid = document.querySelector('#product-grid');
 const dialog = document.querySelector('#product-dialog');
 let lastDetailButton;
+const catalogViewer = createImageViewer('#catalog-image-lightbox');
 function renderProducts(filter = 'all') {
   const visible = products.filter(p => filter === 'all' || (filter === 'generator' ? p.type === 'generator' : p.type === 'turbine' && p.axis === filter))
     .sort((a, b) => Number(Boolean(b.image)) - Number(Boolean(a.image)));
   grid.innerHTML = visible.map(p => `
     <article class="product-card" aria-labelledby="card-${p.id}">
-      <div class="product-art">${productImage(p)}</div>
+      <div class="product-art">${p.id === 'horizontal-400' ? `<button class="product-preview" type="button" data-preview="${p.id}" aria-label="Enlarge ${p.title} product sheet">${productImage(p)}<span class="preview-hint">Click to enlarge</span></button>` : productImage(p)}</div>
       <div class="product-body">
         <p class="product-category">${p.axis === 'vertical' ? 'Vertical' : 'Horizontal'} axis · ${p.type === 'generator' ? 'Generator' : 'Wind turbine'}</p>
         <h3 id="card-${p.id}">${p.title}</h3>
@@ -29,6 +30,12 @@ document.querySelectorAll('[data-filter]').forEach(button => button.addEventList
   renderProducts(button.dataset.filter);
 }));
 grid.addEventListener('click', event => {
+  const preview = event.target.closest('[data-preview]');
+  if (preview) {
+    const product = products.find(item => item.id === preview.dataset.preview);
+    catalogViewer.open(product.image, product.imageAlt, preview);
+    return;
+  }
   const quote = event.target.closest('[data-quote]');
   if (quote) { document.querySelector('#interest').value = quote.dataset.quote; document.querySelector('#interest').focus({preventScroll:true}); return; }
   const button = event.target.closest('[data-id]');

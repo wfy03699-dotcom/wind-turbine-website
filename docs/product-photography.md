@@ -19,7 +19,7 @@ The generator entries describe families (100W–500kW, 12V–440V), not a single
 
 ## Reviewed 400W photographs
 
-These five source images are associated only with `horizontal-400`. The first image supplies the catalog cover. Original files and the completed detail page are preserved.
+The owner selected `assets/products/111111.png` as the homepage cover and first gallery image. It is the complete supplied product sheet, including the parameter table, dimension drawing and power curve. The five original photographs follow it, in their existing order. All six images are associated only with `horizontal-400`. Original image bytes are preserved.
 
 - `assets/products/1E4D8CEE2B4509E01195569A66EA7854.jpg` — front view.
 - `assets/products/27D9CF43B08F8E93203602631620E935.jpg` — rear three-quarter view.
@@ -27,7 +27,7 @@ These five source images are associated only with `horizontal-400`. The first im
 - `assets/products/00A2B646E9E57D888DF3E0B5E8A6B993 - 副本.jpg` — close three-quarter view.
 - `assets/products/9F2B9992D2DE4117F17AE0C5D5C60EEE - 副本.jpg` — installed three-quarter view.
 
-`111111.png` remains excluded from the catalog and gallery: its dimensions, power curve and test-standard claims have not been confirmed. No external product photographs have been introduced.
+The product sheet was previously withheld; its inclusion now follows the owner’s explicit request. Existing structured parameters remain unchanged (400W rated, 450W maximum, 12V / 24V / 48V DC); no additional certification claim is added to page text. All image slots use containment, and both the homepage and detail page offer fit/full-size/original-image viewing. No external product photographs have been introduced.
 
 ## Adding a confirmed photo
 

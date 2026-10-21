@@ -46,3 +46,18 @@ h1{max-width:1000px;font-size:clamp(44px,5.3vw,76px);letter-spacing:-.045em;line
 
 .home-page .contact-list{display:grid;grid-template-columns:1fr;gap:14px;margin:24px 0;line-height:1.6}
 .home-page .contact-list>div{display:grid;grid-template-columns:88px minmax(0,1fr);gap:12px}.home-page .contact-list dt{font-size:13px;color:var(--muted)}.home-page .contact-list dd{text-align:left;font-size:14px;font-weight:500}.home-page .company-name{font-weight:600}.home-page .company-name span{font-weight:400;color:var(--muted)}
+
+/* Full-sheet previews preserve every edge of the supplied image. */
+.home-page .product-preview{position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;background:transparent;cursor:zoom-in}
+.preview-hint{position:absolute;right:12px;bottom:8px;padding:5px 8px;border-radius:3px;background:var(--ink);color:white;font-size:11px}
+dialog.image-viewer{width:min(1400px,96vw);max-width:96vw;max-height:94dvh;padding:48px 16px 16px}
+.image-viewer .lightbox-close{position:absolute;right:8px;top:4px;min-width:44px;min-height:40px;border:0;background:transparent;color:var(--ink);font-size:24px}
+.image-viewer .viewer-toolbar{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:12px}
+.image-viewer .viewer-zoom,.image-viewer .viewer-original{display:inline-flex;align-items:center;min-height:44px;padding:10px 14px;border:1px solid var(--line);border-radius:4px;color:var(--ink);background:var(--paper);font-size:13px}
+.image-viewer .lightbox-viewport{max-height:65dvh;overflow:auto;overscroll-behavior:contain;touch-action:auto;background:#edf0e8}
+.image-viewer .viewer-image{display:block;width:auto;height:auto;max-width:100%;max-height:65dvh;object-fit:contain;margin:auto}
+.image-viewer.is-zoomed .lightbox-viewport{height:65dvh}
+.image-viewer.is-zoomed .viewer-image{max-width:none;max-height:none;width:auto;height:auto}
+.image-viewer .viewer-caption{font-size:12px;line-height:1.5;text-align:center;margin:12px 0 0}
+
+.home-page .product-preview .product-photo{padding-bottom:40px}

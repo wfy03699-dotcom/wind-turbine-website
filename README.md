@@ -52,13 +52,13 @@ Python's local server and GitHub Pages do not process Netlify Forms. A local pre
 
 The original eight catalog entries remain. The ninth product, `horizontal-400`, has a dedicated, crawlable page at `400w-horizontal-axis-wind-turbine.html`, with page-specific styles in `product-detail.css` and gallery controls in `turbine-detail.js`. Its specifications in `products.js` also feed the catalog quick view. Keep the static specification table and shared catalog values consistent.
 
-The new page uses 400W rated / 450W maximum power throughout. No measured acoustic rating, efficiency, annual yield, certification, dimension drawing or estimated power curve is claimed. Dimensions and a verified 400W power curve remain pending supplier data. Do not reuse a 5000W / 5.5KW curve for this model.
+The new page uses 400W rated / 450W maximum power throughout. The owner-selected product sheet is displayed intact, including its dimension drawing and power curve. Structured specifications remain unchanged; no additional acoustic rating, efficiency, annual yield or certification claim is added to the page text. Do not substitute a 5000W / 5.5KW curve for this model.
 
 ### Product photography handoff
 
-Five supplied photographs are reviewed and referenced in `horizontal-400.gallery`. The front view (`1E4D8CEE2B4509E01195569A66EA7854.jpg`) is first and supplies the home catalog cover automatically. Original filenames are retained, including spaces and Chinese characters; browsers encode these paths. No 5000W, 5KW or 5.5KW labels were visible in these five photographs.
+The owner-selected `111111.png` parameter sheet is first in `horizontal-400.gallery` and supplies the home catalog cover automatically. Five supplied photographs follow it in their original order. Original filenames are retained, including spaces and Chinese characters; browsers encode these paths. No 5000W, 5KW or 5.5KW labels were visible in these five photographs.
 
-`111111.png` is intentionally excluded: although its power labels read 400W / 450W, its dimensions, plotted power curve, acoustic claims and IEC test-standard statement are not confirmed by the existing model data. Do not add it until those claims are verified. The original upload remains in the repository; it is not linked from the catalog or product page.
+The owner explicitly requested inclusion of the complete `111111.png` product sheet. It is displayed without cropping. Both the home card and gallery open a shared viewer with fit-to-screen, original-pixel scrolling, an original-image link and Escape/close-button dismissal. This display change does not alter structured technical parameters or establish independent certification verification.
 
 Gallery controls support thumbnails, previous/next buttons, arrow keys, mobile horizontal swipes, and click-to-enlarge with Escape/close-button dismissal and focus restoration. Vertical scrolling and native pinch zoom remain available. Rated power stays 400W, maximum power stays 450W, and all other confirmed specifications are unchanged.
 
