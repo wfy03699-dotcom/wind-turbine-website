@@ -56,11 +56,10 @@ The new page uses 400W rated / 450W maximum power throughout. No measured acoust
 
 ### Product photography handoff
 
-Original image files have not yet been made available in the checkout. Gallery controls are implemented, but the production gallery remains empty until reviewed photographs are added. Do not substitute generated product photographs.
+Five supplied photographs are reviewed and referenced in `horizontal-400.gallery`. The front view (`1E4D8CEE2B4509E01195569A66EA7854.jpg`) is first and supplies the home catalog cover automatically. Original filenames are retained, including spaces and Chinese characters; browsers encode these paths. No 5000W, 5KW or 5.5KW labels were visible in these five photographs.
 
-1. Save the six supplied product photographs and two reviewed English detail images under `assets/products/horizontal-400/`, with stable lowercase filenames. Keep their original aspect ratios. Use the front-view photograph as the first gallery entry (and therefore the catalog cover).
-2. Populate `horizontal-400.gallery` in `products.js` with `{src: 'assets/products/horizontal-400/front.jpg', alt: 'Front view of the five-blade 400W horizontal axis wind turbine'}` entries, using the actual filenames and descriptive English alt text. The first entry supplies the catalog image automatically.
-3. Inspect embedded text before publishing detail images. Images labelled 5000W / 5.5KW must be corrected using verified 400W / 450W information or withheld. Withhold incompatible power curves without real 400W test data; do not scale or invent a curve. Add dimension drawings only when confirmed for this exact model.
-4. Verify every image returns HTTP 200, switches in the gallery, enlarges on click, closes with Escape, and displays without distortion on desktop and mobile. The gallery preserves image proportions and uses native buttons/dialog focus behavior.
+`111111.png` is intentionally excluded: although its power labels read 400W / 450W, its dimensions, plotted power curve, acoustic claims and IEC test-standard statement are not confirmed by the existing model data. Do not add it until those claims are verified. The original upload remains in the repository; it is not linked from the catalog or product page.
+
+Gallery controls support thumbnails, previous/next buttons, arrow keys, mobile horizontal swipes, and click-to-enlarge with Escape/close-button dismissal and focus restoration. Vertical scrolling and native pinch zoom remain available. Rated power stays 400W, maximum power stays 450W, and all other confirmed specifications are unchanged.
 
 The new page's quote links use `index.html?product=horizontal-400#contact`; the static Netlify form includes this model as an option. The form name, POST method, Netlify attributes, honeypot, action and thank-you page remain unchanged. Local checks validate the form markup and preselection; actual submission acceptance and email delivery require a separately authorized deployed Netlify test.

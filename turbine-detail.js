@@ -60,7 +60,28 @@ if (galleryImages.length) {
     caption.textContent = `${index + 1} / ${galleryImages.length} — ${galleryImages[index].alt}. Select the image to enlarge.`;
     buttons.forEach((button, i) => button.setAttribute('aria-pressed', String(index === i)));
   }
+  // Let vertical page scrolling and browser pinch zoom work normally.
+  let touchStart;
+  main.addEventListener('touchstart', event => {
+    touchStart = event.touches.length === 1 ? {x: event.touches[0].clientX, y: event.touches[0].clientY} : null;
+  }, {passive: true});
+  main.addEventListener('touchmove', event => {
+    if (event.touches.length !== 1) touchStart = null;
+  }, {passive: true});
+  main.addEventListener('touchcancel', () => { touchStart = null; });
+  let suppressClick = false;
+  main.addEventListener('touchend', event => {
+    if (!touchStart || event.touches.length) return;
+    const dx = event.changedTouches[0].clientX - touchStart.x;
+    const dy = event.changedTouches[0].clientY - touchStart.y;
+    touchStart = null;
+    if (Math.abs(dx) < 50 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
+    selectImage((activeImage + (dx < 0 ? 1 : -1) + galleryImages.length) % galleryImages.length);
+    suppressClick = true;
+    setTimeout(() => { suppressClick = false; }, 400);
+  }, {passive: true});
   main.addEventListener('click', () => {
+    if (suppressClick) return;
     opener = main;
     enlarged.src = galleryImages[activeImage].src;
     enlarged.alt = galleryImages[activeImage].alt;

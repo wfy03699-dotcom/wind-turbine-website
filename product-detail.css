@@ -12,3 +12,5 @@
 @media(max-width:700px){.turbine-columns{grid-template-columns:1fr;gap:32px}.turbine-section{margin-top:40px;padding-top:28px}.turbine-intro{margin-bottom:40px}.turbine-highlights{gap:20px}.turbine-highlights dd{font-size:19px}.quote-panel{flex-direction:column;align-items:flex-start;padding:24px}.turbine-page header{gap:16px}.turbine-page header .brand{font-size:22px}.turbine-page header>.text-link{font-size:12px}.gallery-thumbnails button{width:64px;height:64px}}
 
 .gallery-controls{display:flex;justify-content:space-between;gap:12px;margin-top:12px}.gallery-controls[hidden]{display:none}.gallery-controls button{min-height:44px;border:1px solid var(--line);border-radius:4px;padding:8px 12px;color:var(--ink);background:var(--paper);font-size:13px}
+
+.gallery-main{cursor:zoom-in}.gallery-main:focus-visible,.gallery-thumbnails button:focus-visible,.gallery-controls button:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
