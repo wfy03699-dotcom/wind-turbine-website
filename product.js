@@ -2,6 +2,7 @@
 const selectedProduct = products.find(p => p.id === new URLSearchParams(location.search).get('id'));
 if (selectedProduct) {
   const p = selectedProduct;
+  if (p.detailPage) location.replace(p.detailPage);
   const name = p.type === 'turbine' ? `${p.power} ${p.axis === 'vertical' ? 'Vertical' : 'Horizontal'} Axis Wind Turbine` : p.title;
   document.title = `${name} | Rewindagic`;
   document.querySelector('meta[name="description"]').content = `Explore ${name}, ${p.voltage}. View available specifications and request a quotation from Rewindagic.`;
