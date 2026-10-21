@@ -63,3 +63,9 @@ Five supplied photographs are reviewed and referenced in `horizontal-400.gallery
 Gallery controls support thumbnails, previous/next buttons, arrow keys, mobile horizontal swipes, and click-to-enlarge with Escape/close-button dismissal and focus restoration. Vertical scrolling and native pinch zoom remain available. Rated power stays 400W, maximum power stays 450W, and all other confirmed specifications are unchanged.
 
 The new page's quote links use `index.html?product=horizontal-400#contact`; the static Netlify form includes this model as an option. The form name, POST method, Netlify attributes, honeypot, action and thank-you page remain unchanged. Local checks validate the form markup and preselection; actual submission acceptance and email delivery require a separately authorized deployed Netlify test.
+
+## Homepage catalog and contact update
+
+The homepage retains all nine products, with explicit axis names, model details and quote actions. Products with reviewed photography appear first within each category. Original power/voltage values, the 400W detail page and Netlify form markup are unchanged.
+
+See [the photography audit](docs/product-photography.md) for the eight missing product photos, the reviewed 400W sources, and owner-confirmed contact information. Missing photos are intentional placeholders, not 404s. Never reuse the 400W photographs for another power rating. The homepage now shows the confirmed company name, email, WhatsApp and phone; this does not reconfigure Netlify notification recipients.

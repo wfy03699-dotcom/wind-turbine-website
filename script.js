@@ -3,9 +3,26 @@ const grid = document.querySelector('#product-grid');
 const dialog = document.querySelector('#product-dialog');
 let lastDetailButton;
 function renderProducts(filter = 'all') {
-  const visible = products.filter(p => filter === 'all' || (filter === 'generator' ? p.type === 'generator' : p.type === 'turbine' && p.axis === filter));
-  grid.innerHTML = visible.map(p => `<article class="product-card"><div class="product-art"><span class="product-tag">${p.type === 'generator' ? 'PERMANENT MAGNET GENERATOR' : 'WIND ENERGY'}</span>${productImage(p)}</div><div class="product-body"><p class="product-category">${p.axis} axis · ${p.type === 'generator' ? 'Generator' : 'Wind turbine'}</p><h3>${p.title}</h3><div class="spec-row"><div><span>${p.type === 'generator' ? 'POWER RANGE' : 'RATED POWER'}</span><strong>${p.power}</strong></div><div><span>VOLTAGE RANGE</span><strong>${p.voltage}</strong></div></div><a class="detail-link" href="${productUrl(p)}">View specifications ↗</a><a class="button dark quote-button" href="#contact" data-quote="${p.id}">Get a Quote ↗</a><button class="detail-button" data-id="${p.id}" aria-label="View ${p.axis} axis product details">Quick view <span>↗</span></button></div></article>`).join('');
-  document.querySelector('#product-count').textContent = `${visible.length} products`;
+  const visible = products.filter(p => filter === 'all' || (filter === 'generator' ? p.type === 'generator' : p.type === 'turbine' && p.axis === filter))
+    .sort((a, b) => Number(Boolean(b.image)) - Number(Boolean(a.image)));
+  grid.innerHTML = visible.map(p => `
+    <article class="product-card" aria-labelledby="card-${p.id}">
+      <div class="product-art">${productImage(p)}</div>
+      <div class="product-body">
+        <p class="product-category">${p.axis === 'vertical' ? 'Vertical' : 'Horizontal'} axis · ${p.type === 'generator' ? 'Generator' : 'Wind turbine'}</p>
+        <h3 id="card-${p.id}">${p.title}</h3>
+        <dl class="card-specs">
+          <div><dt>${p.type === 'generator' ? 'Power range' : 'Rated power'}</dt><dd>${p.power}</dd></div>
+          <div><dt>Voltage range</dt><dd>${p.voltage}</dd></div>
+        </dl>
+        <div class="card-actions">
+          <a class="button detail-link" href="${productUrl(p)}" aria-label="View Product Details: ${p.title}">View Product Details <span aria-hidden="true">↗</span></a>
+          <a class="button dark quote-button" href="#contact" data-quote="${p.id}" aria-label="Get a Quote: ${p.title}">Get a Quote <span aria-hidden="true">↗</span></a>
+          <button class="detail-button" data-id="${p.id}" aria-label="Quick view: ${p.title}">Quick view <span aria-hidden="true">+</span></button>
+        </div>
+      </div>
+    </article>`).join('');
+  document.querySelector('#product-count').textContent = `${visible.length} ${filter === 'all' ? 'products' : filter === 'generator' ? 'generator families' : 'wind turbines'}`;
 }
 document.querySelectorAll('[data-filter]').forEach(button => button.addEventListener('click', () => {
   document.querySelectorAll('[data-filter]').forEach(b => {b.classList.toggle('active', b === button);b.setAttribute('aria-pressed', String(b === button));});
