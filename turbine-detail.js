@@ -88,7 +88,7 @@ if (galleryImages.length) {
     document.querySelector('#lightbox-caption').textContent = galleryImages[activeImage].alt;
     lightbox.showModal();
   });
-  gallery.append(main, controls, thumbnails, caption);
+  gallery.append(main, thumbnails, controls, caption);
   selectImage(0);
 }
 lightbox.querySelector('button').addEventListener('click', () => lightbox.close());
