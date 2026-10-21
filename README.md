@@ -56,7 +56,7 @@ The new page uses 400W rated / 450W maximum power throughout. The owner-selected
 
 ### Product photography handoff
 
-The owner-selected `111111.png` parameter sheet is first in `horizontal-400.gallery` and supplies the home catalog cover automatically. Five supplied photographs follow it in their original order. Original filenames are retained, including spaces and Chinese characters; browsers encode these paths. No 5000W, 5KW or 5.5KW labels were visible in these five photographs.
+The owner-selected `111111.png` parameter sheet is first in `horizontal-400.gallery`. The separate `image` and `imageAlt` fields select the complete front-view photograph (`1E4D8CEE2B4509E01195569A66EA7854.jpg`) for the home catalog cover. Five supplied photographs follow it in their original order. Original filenames are retained, including spaces and Chinese characters; browsers encode these paths. No 5000W, 5KW or 5.5KW labels were visible in these five photographs.
 
 The owner explicitly requested inclusion of the complete `111111.png` product sheet. It is displayed without cropping. Both the home card and gallery open a shared viewer with fit-to-screen, original-pixel scrolling, an original-image link and Escape/close-button dismissal. This display change does not alter structured technical parameters or establish independent certification verification.
 

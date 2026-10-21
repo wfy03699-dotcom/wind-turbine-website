@@ -19,7 +19,7 @@ The generator entries describe families (100W–500kW, 12V–440V), not a single
 
 ## Reviewed 400W photographs
 
-The owner selected `assets/products/111111.png` as the homepage cover and first gallery image. It is the complete supplied product sheet, including the parameter table, dimension drawing and power curve. The five original photographs follow it, in their existing order. All six images are associated only with `horizontal-400`. Original image bytes are preserved.
+The homepage cover is the complete front-view photograph `assets/products/1E4D8CEE2B4509E01195569A66EA7854.jpg`. The detail gallery begins with `assets/products/111111.png`. It is the complete supplied product sheet, including the parameter table, dimension drawing and power curve. The five original photographs follow it, in their existing order. All six images are associated only with `horizontal-400`. Original image bytes are preserved.
 
 - `assets/products/1E4D8CEE2B4509E01195569A66EA7854.jpg` — front view.
 - `assets/products/27D9CF43B08F8E93203602631620E935.jpg` — rear three-quarter view.
@@ -31,7 +31,7 @@ The product sheet was previously withheld; its inclusion now follows the owner�
 
 ## Adding a confirmed photo
 
-Place an authorized photograph under `assets/products/`, identify its exact product, and assign that entry's `image` and `imageAlt` in `products.js` (or use its first reviewed gallery entry). Initialization now preserves an explicitly supplied `image` instead of resetting it to an empty string. Describe the actual view and model in English. Check paths with spaces/non-ASCII characters, aspect ratio, full-image visibility and mobile loading before publishing.
+Place an authorized photograph under `assets/products/`, identify its exact product, and assign that entry's `image` and `imageAlt` in `products.js` (these explicit cover fields take priority over the first gallery entry). Initialization now preserves an explicitly supplied `image` instead of resetting it to an empty string. Describe the actual view and model in English. Check paths with spaces/non-ASCII characters, aspect ratio, full-image visibility and mobile loading before publishing.
 
 ## Company information
 
