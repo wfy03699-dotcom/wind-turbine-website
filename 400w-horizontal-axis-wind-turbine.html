@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="product-detail.css">
 <script src="products.js" defer></script>
+<script src="image-viewer.js" defer></script>
 <script src="turbine-detail.js" defer></script>
 <script type="application/ld+json">
 {
@@ -94,8 +95,8 @@
 <tr><th scope="row">Package weight</th><td>Approximately 13 kg</td></tr>
 </tbody></table></section>
 <div class="turbine-columns turbine-section">
-<section aria-labelledby="dimensions-heading"><h2 id="dimensions-heading">Dimensions</h2><p>A verified dimension drawing for this 400W model is not yet available. Request rotor dimensions, mounting details and installation clearances before planning your support structure.</p></section>
-<section aria-labelledby="curve-heading"><h2 id="curve-heading">Power Curve</h2><p>A verified power curve for this 400W model is not yet available. No estimated curve is displayed. Rated power is 400W at a rated wind speed of 11 m/s; maximum power is 450W.</p></section>
+<section aria-labelledby="dimensions-heading"><h2 id="dimensions-heading">Dimensions</h2><p>The supplied product sheet includes a dimension drawing. Open the first gallery image at full size to read it. Confirm mounting details and installation clearances before planning your support structure.</p></section>
+<section aria-labelledby="curve-heading"><h2 id="curve-heading">Power Curve</h2><p>The supplied product sheet includes a power curve. Open the first gallery image at full size to read it. Rated power remains 400W at 11 m/s; maximum power is 450W. Actual output depends on site conditions.</p></section>
 </div>
 <section class="turbine-section" aria-labelledby="applications-heading"><h2 id="applications-heading">Applications</h2><div class="feature-grid">
 <article><h3>Residential wind energy systems</h3><p>Explore supplemental wind energy where local wind resources, planning rules and safe mounting conditions allow. Match the system to the site's energy needs.</p></article>
@@ -105,6 +106,6 @@
 <section class="quote-panel turbine-section" aria-labelledby="quote-heading"><div><p class="eyebrow light">PROJECT SUPPORT</p><h2 id="quote-heading">Request a Quote</h2><p>Share your location, required voltage and application. Our team can help confirm availability, mounting details and compatible equipment.</p></div><a class="button lime" href="index.html?product=horizontal-400#contact">Request a Quote ↗</a></section>
 </main>
 <footer><a class="brand" href="index.html">✳ Rewindagic.</a><span>Turning wind into possibility.</span><a href="index.html#products">Explore all products ↗</a></footer>
-<dialog id="image-lightbox" aria-labelledby="lightbox-caption"><button class="lightbox-close" type="button" aria-label="Close enlarged image">✕</button><img id="lightbox-image" alt=""><p id="lightbox-caption"></p></dialog>
+<dialog class="image-viewer" id="image-lightbox" aria-labelledby="lightbox-caption"><button class="lightbox-close" type="button" aria-label="Close enlarged image">✕</button><div class="viewer-toolbar"><button class="viewer-zoom" type="button" aria-pressed="false">View at full size</button><a class="viewer-original" target="_blank" rel="noopener">Open original image ↗</a></div><div class="lightbox-viewport"><img id="lightbox-image" class="viewer-image" alt=""></div><p id="lightbox-caption" class="viewer-caption"></p></dialog>
 </body>
 </html>

@@ -3,10 +3,8 @@
 const turbine = products.find(product => product.id === 'horizontal-400');
 const galleryImages = turbine.gallery || [];
 const gallery = document.querySelector('#product-gallery');
-const lightbox = document.querySelector('#image-lightbox');
-const enlarged = document.querySelector('#lightbox-image');
+const productViewer = createImageViewer('#image-lightbox');
 let activeImage = 0;
-let opener;
 if (galleryImages.length) {
   gallery.replaceChildren();
   const main = document.createElement('button');
@@ -82,19 +80,8 @@ if (galleryImages.length) {
   }, {passive: true});
   main.addEventListener('click', () => {
     if (suppressClick) return;
-    opener = main;
-    enlarged.src = galleryImages[activeImage].src;
-    enlarged.alt = galleryImages[activeImage].alt;
-    document.querySelector('#lightbox-caption').textContent = galleryImages[activeImage].alt;
-    lightbox.showModal();
+    productViewer.open(galleryImages[activeImage].src, galleryImages[activeImage].alt, main);
   });
   gallery.append(main, thumbnails, controls, caption);
   selectImage(0);
 }
-lightbox.querySelector('button').addEventListener('click', () => lightbox.close());
-lightbox.addEventListener('click', event => {
-  if (event.target !== lightbox) return;
-  const rect = lightbox.getBoundingClientRect();
-  if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) lightbox.close();
-});
-lightbox.addEventListener('close', () => opener?.focus());
