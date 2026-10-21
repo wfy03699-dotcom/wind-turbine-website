@@ -23,6 +23,23 @@ if (galleryImages.length) {
   thumbnails.className = 'gallery-thumbnails';
   thumbnails.setAttribute('role', 'group');
   thumbnails.setAttribute('aria-label', 'Choose product image');
+  const controls = document.createElement('div');
+  controls.className = 'gallery-controls';
+  const previous = document.createElement('button');
+  previous.type = 'button';
+  previous.textContent = '← Previous image';
+  const next = document.createElement('button');
+  next.type = 'button';
+  next.textContent = 'Next image →';
+  previous.addEventListener('click', () => selectImage((activeImage - 1 + galleryImages.length) % galleryImages.length));
+  next.addEventListener('click', () => selectImage((activeImage + 1) % galleryImages.length));
+  controls.append(previous, next);
+  controls.hidden = galleryImages.length < 2;
+  gallery.addEventListener('keydown', event => {
+    if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+    event.preventDefault();
+    selectImage((activeImage + (event.key === 'ArrowRight' ? 1 : -1) + galleryImages.length) % galleryImages.length);
+  });
   const buttons = galleryImages.map((item, index) => {
     const button = document.createElement('button');
     button.type = 'button';
@@ -50,7 +67,7 @@ if (galleryImages.length) {
     document.querySelector('#lightbox-caption').textContent = galleryImages[activeImage].alt;
     lightbox.showModal();
   });
-  gallery.append(main, thumbnails, caption);
+  gallery.append(main, controls, thumbnails, caption);
   selectImage(0);
 }
 lightbox.querySelector('button').addEventListener('click', () => lightbox.close());
