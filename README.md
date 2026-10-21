@@ -46,3 +46,21 @@ The current inquiry form replaces the older project-brief download described abo
 5. Test an empty required field, invalid email, and quantity 0: the browser should block submission. Repeat a valid submission from a phone. Test all three product categories and a detail-page quote link.
 
 Python's local server and GitHub Pages do not process Netlify Forms. A local preview blocks submission with an explanation; deployment on Netlify with form detection enabled is required. Netlify form limits and spam filtering apply. Notification delivery and production form acceptance remain unverified until the deployed test above succeeds. A direct visit to the thank-you page proves neither submission nor notification delivery.
+
+
+## 400W horizontal axis model
+
+The original eight catalog entries remain. The ninth product, `horizontal-400`, has a dedicated, crawlable page at `400w-horizontal-axis-wind-turbine.html`, with page-specific styles in `product-detail.css` and gallery controls in `turbine-detail.js`. Its specifications in `products.js` also feed the catalog quick view. Keep the static specification table and shared catalog values consistent.
+
+The new page uses 400W rated / 450W maximum power throughout. No measured acoustic rating, efficiency, annual yield, certification, dimension drawing or estimated power curve is claimed. Dimensions and a verified 400W power curve remain pending supplier data. Do not reuse a 5000W / 5.5KW curve for this model.
+
+### Product photography handoff
+
+Original image files have not yet been made available in the checkout. Gallery controls are implemented, but the production gallery remains empty until reviewed photographs are added. Do not substitute generated product photographs.
+
+1. Save the six supplied product photographs and two reviewed English detail images under `assets/products/horizontal-400/`, with stable lowercase filenames. Keep their original aspect ratios. Use the front-view photograph as the first gallery entry (and therefore the catalog cover).
+2. Populate `horizontal-400.gallery` in `products.js` with `{src: 'assets/products/horizontal-400/front.jpg', alt: 'Front view of the five-blade 400W horizontal axis wind turbine'}` entries, using the actual filenames and descriptive English alt text. The first entry supplies the catalog image automatically.
+3. Inspect embedded text before publishing detail images. Images labelled 5000W / 5.5KW must be corrected using verified 400W / 450W information or withheld. Withhold incompatible power curves without real 400W test data; do not scale or invent a curve. Add dimension drawings only when confirmed for this exact model.
+4. Verify every image returns HTTP 200, switches in the gallery, enlarges on click, closes with Escape, and displays without distortion on desktop and mobile. The gallery preserves image proportions and uses native buttons/dialog focus behavior.
+
+The new page's quote links use `index.html?product=horizontal-400#contact`; the static Netlify form includes this model as an option. The form name, POST method, Netlify attributes, honeypot, action and thank-you page remain unchanged. Local checks validate the form markup and preselection; actual submission acceptance and email delivery require a separately authorized deployed Netlify test.
