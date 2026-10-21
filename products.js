@@ -11,6 +11,8 @@ products.push({
   id: 'horizontal-400', axis: 'horizontal', type: 'turbine',
   title: '400W Horizontal Axis Wind Turbine', power: '400W', voltage: '12V / 24V / 48V DC',
   detailPage: '400w-horizontal-axis-wind-turbine.html',
+  image: 'assets/products/1E4D8CEE2B4509E01195569A66EA7854.jpg',
+  imageAlt: 'Front view of the five-blade 400W horizontal axis wind turbine',
   description: 'Explore renewable wind energy with a compact 400W horizontal axis wind turbine for residential systems, off-grid projects, farms and cabins. Its five-blade rotor, fiberglass nylon blades and aluminum alloy body offer a practical starting point for a site-specific wind energy installation. Actual output and sound levels depend on wind conditions, siting and installation.',
   // Owner-selected parameter sheet first, followed by the five original photographs.
   gallery: [
@@ -34,8 +36,8 @@ products.push({
 
 // Replace image with a verified local product photo path; leave empty for the placeholder.
 products.forEach(product => {
-  product.image = product.gallery?.[0]?.src || product.image || '';
-  product.imageAlt = product.gallery?.[0]?.alt || product.imageAlt || product.title;
+  product.image = product.image || product.gallery?.[0]?.src || '';
+  product.imageAlt = product.imageAlt || product.gallery?.[0]?.alt || product.title;
 });
 function productSpecs(p) {
   if (p.specifications) return p.specifications;
