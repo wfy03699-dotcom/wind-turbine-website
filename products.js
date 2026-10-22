@@ -47,7 +47,8 @@ if (horizontal600) {
     {src:'assets/products/600w-horizontal-06-factory-assembly.webp', alt:'Factory assembly views of the 600W horizontal axis wind turbine'},
     {src:'assets/products/600w-horizontal-07-tail-assembly.webp', alt:'Factory photographs of the tail assembly of the 600W horizontal axis wind turbine'},
     {src:'assets/products/600w-horizontal-08-components.webp', alt:'Disassembled components and three blades of the 600W horizontal axis wind turbine'},
-    {src:'assets/products/600w-horizontal-09-exploded-diagram.webp', alt:'Exploded assembly drawing of the three-blade horizontal axis wind turbine'}
+    {src:'assets/products/600w-horizontal-09-exploded-diagram.webp', alt:'Exploded assembly drawing of the three-blade horizontal axis wind turbine'},
+    {src:'assets/products/600w-horizontal-10-specification-infographic.webp', alt:'600W horizontal axis wind turbine marketing infographic; model number and technical specifications pending verification'}
   ];
   horizontal600.specifications = [
     ['Rated power','600W'],
