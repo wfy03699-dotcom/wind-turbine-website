@@ -32,6 +32,38 @@ products.push({
   ]
 });
 
+// Real 600W horizontal-axis product photographs. Do not substitute M6-6000/6000W specifications.
+const horizontal600 = products.find(p => p.id === 'horizontal-600');
+if (horizontal600) {
+  horizontal600.detailPage = '600w-horizontal-axis-wind-turbine.html';
+  horizontal600.description = 'A 600W-rated three-blade horizontal axis wind turbine. Review real installation and component photographs. Confirm voltage, controller compatibility, mounting requirements and tested performance before ordering.';
+  horizontal600.gallery = [
+    {src:'assets/products/600w-horizontal-01-main.webp', alt:'Installed full view of the three-blade 600W horizontal axis wind turbine'},
+    {src:'assets/products/600w-horizontal-02-installed-front.webp', alt:'Installed front three-quarter view of the 600W horizontal axis wind turbine'},
+    {src:'assets/products/600w-horizontal-03-installed-rear.webp', alt:'Installed rear three-quarter view of the 600W horizontal axis wind turbine'},
+    {src:'assets/products/600w-horizontal-04-generator-side.webp', alt:'Close-up side view of the 600W horizontal axis wind turbine generator housing'},
+    {src:'assets/products/600w-horizontal-05-hub-front.webp', alt:'Close-up of the rotor hub and blades of the 600W horizontal axis wind turbine'},
+    {src:'assets/products/600w-horizontal-06-factory-assembly.webp', alt:'Factory assembly views of the 600W horizontal axis wind turbine'},
+    {src:'assets/products/600w-horizontal-07-tail-assembly.webp', alt:'Factory photographs of the tail assembly of the 600W horizontal axis wind turbine'},
+    {src:'assets/products/600w-horizontal-08-components.webp', alt:'Disassembled components and three blades of the 600W horizontal axis wind turbine'},
+    {src:'assets/products/600w-horizontal-09-exploded-diagram.webp', alt:'Exploded assembly drawing of the three-blade horizontal axis wind turbine'}
+  ];
+  horizontal600.specifications = [
+    ['Rated power','600W'],
+    ['Axis orientation','Horizontal'],
+    ['Number of blades','3'],
+    ['Rated voltage','Contact Us'],
+    ['Maximum power','Contact Us'],
+    ['Start-up wind speed','Contact Us'],
+    ['Rated wind speed','Contact Us'],
+    ['Survival wind speed','Contact Us'],
+    ['Rotor diameter','Contact Us'],
+    ['Blade material','Contact Us'],
+    ['Generator type','Contact Us'],
+    ['Weight','Contact Us']
+  ];
+}
+
 // Replace image with a verified local product photo path; leave empty for the placeholder.
 products.forEach(product => {
   product.image = product.gallery?.[0]?.src || product.image || '';
