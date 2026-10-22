@@ -39,6 +39,7 @@ if (horizontal600) {
   horizontal600.voltage = 'Contact Us';
   horizontal600.description = 'A 600W-rated three-blade horizontal axis wind turbine. Review real installation and component photographs. Confirm voltage, controller compatibility, mounting requirements and tested performance before ordering.';
   horizontal600.gallery = [
+    {src:'assets/products/600w-horizontal-10-specification-infographic.png', alt:'600W horizontal axis wind turbine marketing infographic; model number and technical specifications pending verification'},
     {src:'assets/products/600w-horizontal-01-main.webp', alt:'Installed full view of the three-blade 600W horizontal axis wind turbine'},
     {src:'assets/products/600w-horizontal-02-installed-front.webp', alt:'Installed front three-quarter view of the 600W horizontal axis wind turbine'},
     {src:'assets/products/600w-horizontal-03-installed-rear.webp', alt:'Installed rear three-quarter view of the 600W horizontal axis wind turbine'},
@@ -48,7 +49,6 @@ if (horizontal600) {
     {src:'assets/products/600w-horizontal-07-tail-assembly.webp', alt:'Factory photographs of the tail assembly of the 600W horizontal axis wind turbine'},
     {src:'assets/products/600w-horizontal-08-components.webp', alt:'Disassembled components and three blades of the 600W horizontal axis wind turbine'},
     {src:'assets/products/600w-horizontal-09-exploded-diagram.webp', alt:'Exploded assembly drawing of the three-blade horizontal axis wind turbine'},
-    {src:'assets/products/600w-horizontal-10-specification-infographic.png', alt:'600W horizontal axis wind turbine marketing infographic; model number and technical specifications pending verification'}
   ];
   horizontal600.specifications = [
     ['Rated power','600W'],
