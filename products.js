@@ -67,8 +67,8 @@ if (horizontal600) {
 
 // Replace image with a verified local product photo path; leave empty for the placeholder.
 products.forEach(product => {
-  product.image = product.gallery?.[0]?.src || product.image || '';
-  product.imageAlt = product.gallery?.[0]?.alt || product.imageAlt || product.title;
+  product.image = product.image || product.gallery?.[0]?.src || '';
+  product.imageAlt = product.imageAlt || product.gallery?.[0]?.alt || product.title;
 });
 function productSpecs(p) {
   if (p.specifications) return p.specifications;
