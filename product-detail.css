@@ -23,3 +23,32 @@
 #image-lightbox.image-viewer{width:min(1400px,96vw);max-width:96vw;padding:48px 16px 16px}
 #image-lightbox #lightbox-image{max-height:65dvh}
 #image-lightbox.is-zoomed #lightbox-image{max-width:none;max-height:none}
+
+
+/* Product photo zoom controls: wheel to zoom, mouse drag to pan. */
+.image-viewer .viewer-zoom-in,
+.image-viewer .viewer-zoom-out {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:44px;
+  min-height:44px;
+  padding:8px 12px;
+  border:1px solid var(--line);
+  border-radius:4px;
+  background:var(--paper);
+  color:var(--ink);
+  font-size:21px;
+  font-weight:700;
+}
+.image-viewer .viewer-zoom-in:disabled,
+.image-viewer .viewer-zoom-out:disabled {opacity:.4;cursor:not-allowed}
+.image-viewer .viewer-zoom-level {min-width:48px;text-align:center;font-size:13px;font-variant-numeric:tabular-nums}
+.image-viewer .viewer-image {user-select:none;-webkit-user-drag:none}
+.image-viewer.is-zoomed .lightbox-viewport {cursor:grab}
+.image-viewer .lightbox-viewport.is-dragging {cursor:grabbing}
+@media(max-width:600px) {
+  .image-viewer .viewer-toolbar {gap:6px}
+  .image-viewer .viewer-zoom-in,
+  .image-viewer .viewer-zoom-out {min-width:40px;min-height:40px}
+}
