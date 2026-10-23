@@ -32,6 +32,31 @@ products.push({
   ]
 });
 
+// FK-1000W owner-supplied infographic. Additional installation photos will be added after upload.
+products.push({
+  id: 'horizontal-1000', axis: 'horizontal', type: 'turbine',
+  title: '1000W Horizontal Axis Wind Turbine', power: '1000W', voltage: '48V–220V',
+  detailPage: '1000w-horizontal-axis-wind-turbine.html',
+  description: 'FK-1000 three-blade horizontal axis wind turbine rated at 1000W. Owner-supplied product artwork lists a 48V–220V voltage range and 60 kg weight. Confirm the exact voltage configuration, electrical output type, performance curve and included accessories before ordering.',
+  gallery: [
+    {src: 'assets/products/FK-1000W-horizontal-wind-turbine-main.png', alt: 'FK-1000 1000W horizontal axis wind turbine product infographic and model overview'}
+  ],
+  specifications: [
+    ['Model', 'FK-1000'],
+    ['Rated power', '1000W'],
+    ['Axis orientation', 'Horizontal'],
+    ['Number of blades', '3'],
+    ['Voltage range', '48V–220V (confirm configuration)'],
+    ['Weight', '60 kg (owner-supplied)'],
+    ['Electrical output type', 'Contact Us'],
+    ['Start-up wind speed', 'Contact Us'],
+    ['Rated wind speed', 'Contact Us'],
+    ['Rotor diameter', 'Contact Us'],
+    ['Blade material', 'Contact Us'],
+    ['Controller and accessories', 'Contact Us']
+  ]
+});
+
 // Real 600W horizontal-axis product photographs. Do not substitute M6-6000/6000W specifications.
 const horizontal600 = products.find(p => p.id === 'horizontal-600');
 if (horizontal600) {
