@@ -37,7 +37,7 @@ products.push({
   id: 'horizontal-1000', axis: 'horizontal', type: 'turbine',
   title: '1000W Horizontal Axis Wind Turbine', power: '1000W', voltage: '48V–220V',
   detailPage: '1000w-horizontal-axis-wind-turbine.html',
-  description: 'FK-1000 three-blade horizontal axis wind turbine rated at 1000W. Owner-supplied product artwork lists a 48V–220V voltage range and 60 kg weight. Confirm the exact voltage configuration, electrical output type, performance curve and included accessories before ordering.',
+  description: 'FK-1000 horizontal-axis three-blade turbine. Supplier infographic lists 1000W rated / 1100W maximum power, 48V–220V, 2 m/s start-up wind speed, 12 m/s rated wind speed, 2.8 m rotor diameter and 60 kg weight. Confirm the voltage option, electrical output, tested performance and accessories before ordering.',
   gallery: [
     {src: 'assets/products/FK-1000W-horizontal-wind-turbine-main.png', alt: 'FK-1000 1000W horizontal axis wind turbine product infographic and model overview'},
     {src: 'assets/products/31.jpg', alt: 'FK-1000 horizontal axis wind turbine original product photograph 1'},
@@ -51,21 +51,23 @@ products.push({
   specifications: [
     ['Model', 'FK-1000'],
     ['Rated power', '1000W'],
+    ['Maximum power', '1100W'],
     ['Axis orientation', 'Horizontal'],
+    ['Rated voltage', '48V–220V (confirm exact option)'],
+    ['Start-up wind speed', '2 m/s'],
+    ['Rated wind speed', '12 m/s'],
+    ['Survival wind speed', '50 m/s'],
+    ['Weight', '60 kg'],
+    ['Rotor diameter', '2.8 m'],
+    ['Blade height', '1.4 m (as labeled)'],
     ['Number of blades', '3'],
-    ['Voltage range', '48V–220V (confirm selected option)'],
-    ['Weight', '60 kg (supplied artwork; confirm)'],
-    ['Maximum power', '1100W (marketing artwork; verify)'],
-    ['Start-up wind speed', '2 m/s (marketing artwork; verify)'],
-    ['Rated wind speed', '12 m/s (marketing artwork; verify)'],
-    ['Survival wind speed', '50 m/s (marketing artwork; verify)'],
-    ['Rotor diameter', '2.8 m (marketing artwork; verify)'],
-    ['Blade length', '1.4 m (marketing artwork; verify)'],
-    ['Blade material', 'Nylon fiber (marketing artwork; verify)'],
-    ['Body material', 'Aluminum alloy (marketing artwork; verify)'],
-    ['Generator type', '3-phase permanent magnet AC synchronous (artwork; verify)'],
-    ['Control system', 'Electromagnetic (artwork; verify)'],
-    ['Controller and included accessories', 'Confirm before order']
+    ['Blade material', 'Nylon fiber'],
+    ['Body material', 'Aluminum alloy'],
+    ['Generator type', '3-phase permanent magnet AC synchronous generator'],
+    ['Control system', 'Electromagnetic'],
+    ['Yaw mode', 'Automatic upwind'],
+    ['Operating temperature', '−40°C to +80°C'],
+    ['Design life', 'More than 20 years (supplier claim)']
 
   ]
 });
