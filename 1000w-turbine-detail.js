@@ -1,5 +1,5 @@
 'use strict';
-// FK-1000 owner-provided marketing image; other gallery images are added only after upload.
+// FK-1000 owner-provided marketing image and seven uploaded product photographs.
 const turbine = products.find(product => product.id === 'horizontal-1000');
 const galleryImages = turbine.gallery || [];
 const gallery = document.querySelector('#product-gallery');
@@ -84,4 +84,34 @@ if (galleryImages.length) {
   });
   gallery.append(main, thumbnails, controls, caption);
   selectImage(0);
+}
+
+
+// Dedicated FK-1000 inquiry form. Netlify processes the POST on deployed sites.
+// A local static preview must never show a false submission success.
+const fk1000QuoteForm = document.querySelector('#fk1000-inquiry-form');
+if (fk1000QuoteForm) {
+  fk1000QuoteForm.addEventListener('submit', event => {
+    if (['localhost', '127.0.0.1', ''].includes(location.hostname) || location.protocol === 'file:') {
+      event.preventDefault();
+      document.querySelector('#fk1000-form-status').textContent =
+        'Please submit from the deployed Netlify site. This local preview cannot send inquiries.';
+    }
+  });
+
+  const whatsapp = document.querySelector('.fk1000-contact-link');
+  if (whatsapp) {
+    whatsapp.addEventListener('click', () => {
+      const get = id => (document.getElementById(id)?.value || '').trim();
+      const details = [
+        'Hello, I would like a quotation for FK-1000 1000W horizontal axis wind turbine.',
+        'Quantity: ' + (get('fk1000-quantity') || 'please advise'),
+        'Preferred voltage: ' + (get('fk1000-voltage') || 'please advise'),
+        'Delivery country: ' + (get('fk1000-country') || 'please advise'),
+        'Application: ' + (get('fk1000-application') || 'not specified'),
+        'Please confirm technical specifications, controller options and shipping.'
+      ].join('\\n').replaceAll('\\n', '\n');
+      whatsapp.href = 'https://wa.me/8619825532553?text=' + encodeURIComponent(details);
+    });
+  }
 }
