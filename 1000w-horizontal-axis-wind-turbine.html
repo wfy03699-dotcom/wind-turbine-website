@@ -13,6 +13,10 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="product-detail.css">
+<style>
+/* Keep the FK-1000 landscape infographic at its natural proportions. */
+.fk1000-page .gallery-main img { aspect-ratio: auto; height: auto; max-height: none; }
+</style>
 <script src="products.js" defer></script>
 <script src="image-viewer.js" defer></script>
 <script src="1000w-turbine-detail.js" defer></script>
@@ -34,7 +38,7 @@
 }
 </script>
 </head>
-<body class="turbine-page">
+<body class="turbine-page fk1000-page">
 <header><a class="brand" href="index.html">✳ Rewindagic.</a><a class="text-link" href="index.html#products">← All products</a></header>
 <main class="section turbine-detail">
 <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="index.html#products">Products</a><span aria-hidden="true">/</span><span>FK-1000 1000W Horizontal Axis</span></nav>
