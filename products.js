@@ -40,13 +40,13 @@ products.push({
   description: 'FK-1000 three-blade horizontal axis wind turbine rated at 1000W. Owner-supplied product artwork lists a 48V–220V voltage range and 60 kg weight. Confirm the exact voltage configuration, electrical output type, performance curve and included accessories before ordering.',
   gallery: [
     {src: 'assets/products/FK-1000W-horizontal-wind-turbine-main.png', alt: 'FK-1000 1000W horizontal axis wind turbine product infographic and model overview'},
-    {src: 'assets/products/31.jpg', alt: 'FK-1000 three-blade horizontal axis wind turbine installed beside the lake, front three-quarter view'},
-    {src: 'assets/products/33.jpg', alt: 'FK-1000 wind turbine installed beside the lake, rear view showing tail vane'},
-    {src: 'assets/products/34.jpg', alt: 'FK-1000 horizontal axis wind turbine, direct front view of the three-blade rotor'},
-    {src: 'assets/products/37.jpg', alt: 'FK-1000 wind turbine installed beside the lake, angled front view'},
-    {src: 'assets/products/53.jpg', alt: 'FK-1000 horizontal axis wind turbine, side profile and tail vane'},
-    {src: 'assets/products/62.jpg', alt: 'FK-1000 horizontal axis wind turbine, rear three-quarter view of rotor and tail vane'},
-    {src: 'assets/products/68.jpg', alt: 'FK-1000 wind turbine rotor hub and mounting assembly detail'}
+    {src: 'assets/products/31.jpg', alt: 'FK-1000 horizontal axis wind turbine original product photograph 1'},
+    {src: 'assets/products/33.jpg', alt: 'FK-1000 horizontal axis wind turbine original product photograph 2'},
+    {src: 'assets/products/34.jpg', alt: 'FK-1000 horizontal axis wind turbine original product photograph 3'},
+    {src: 'assets/products/37.jpg', alt: 'FK-1000 horizontal axis wind turbine original product photograph 4'},
+    {src: 'assets/products/53.jpg', alt: 'FK-1000 horizontal axis wind turbine original product photograph 5'},
+    {src: 'assets/products/62.jpg', alt: 'FK-1000 horizontal axis wind turbine original product photograph 6'},
+    {src: 'assets/products/68.jpg', alt: 'FK-1000 horizontal axis wind turbine original product photograph 7'}
   ],
   specifications: [
     ['Model', 'FK-1000'],
