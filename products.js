@@ -32,10 +32,84 @@ products.push({
   ]
 });
 
+// FK-1000W owner-supplied infographic first, followed by seven original installation photographs.
+products.push({
+  id: 'horizontal-1000', axis: 'horizontal', type: 'turbine',
+  title: '1000W Horizontal Axis Wind Turbine', power: '1000W', voltage: '48V–220V',
+  detailPage: '1000w-horizontal-axis-wind-turbine.html',
+  description: 'FK-1000 horizontal-axis three-blade turbine. Supplier infographic lists 1000W rated / 1100W maximum power, 48V–220V, 2 m/s start-up wind speed, 12 m/s rated wind speed, 2.8 m rotor diameter and 60 kg weight. Confirm the voltage option, electrical output, tested performance and accessories before ordering.',
+  gallery: [
+    {src: 'assets/products/FK-1000W-horizontal-wind-turbine-main.png', alt: 'FK-1000 1000W horizontal axis wind turbine product infographic and model overview'},
+    {src: 'assets/products/31.jpg', alt: 'FK-1000 horizontal axis wind turbine original product photograph 1'},
+    {src: 'assets/products/33.jpg', alt: 'FK-1000 horizontal axis wind turbine original product photograph 2'},
+    {src: 'assets/products/34.jpg', alt: 'FK-1000 horizontal axis wind turbine original product photograph 3'},
+    {src: 'assets/products/37.jpg', alt: 'FK-1000 horizontal axis wind turbine original product photograph 4'},
+    {src: 'assets/products/53.jpg', alt: 'FK-1000 horizontal axis wind turbine original product photograph 5'},
+    {src: 'assets/products/62.jpg', alt: 'FK-1000 horizontal axis wind turbine original product photograph 6'},
+    {src: 'assets/products/68.jpg', alt: 'FK-1000 horizontal axis wind turbine original product photograph 7'}
+  ],
+  specifications: [
+    ['Model', 'FK-1000'],
+    ['Rated power', '1000W'],
+    ['Maximum power', '1100W'],
+    ['Axis orientation', 'Horizontal'],
+    ['Rated voltage', '48V–220V (confirm exact option)'],
+    ['Start-up wind speed', '2 m/s'],
+    ['Rated wind speed', '12 m/s'],
+    ['Survival wind speed', '50 m/s'],
+    ['Weight', '60 kg'],
+    ['Rotor diameter', '2.8 m'],
+    ['Blade height', '1.4 m (as labeled)'],
+    ['Number of blades', '3'],
+    ['Blade material', 'Nylon fiber'],
+    ['Body material', 'Aluminum alloy'],
+    ['Generator type', '3-phase permanent magnet AC synchronous generator'],
+    ['Control system', 'Electromagnetic'],
+    ['Yaw mode', 'Automatic upwind'],
+    ['Operating temperature', '−40°C to +80°C'],
+    ['Design life', 'More than 20 years (supplier claim)']
+
+  ]
+});
+
+// Real 600W horizontal-axis product photographs. Do not substitute M6-6000/6000W specifications.
+const horizontal600 = products.find(p => p.id === 'horizontal-600');
+if (horizontal600) {
+  horizontal600.detailPage = '600w-horizontal-axis-wind-turbine.html';
+  horizontal600.voltage = 'Contact Us';
+  horizontal600.description = 'A 600W-rated three-blade horizontal axis wind turbine. Review real installation and component photographs. Confirm voltage, controller compatibility, mounting requirements and tested performance before ordering.';
+  horizontal600.gallery = [
+    {src:'assets/products/600w-horizontal-10-specification-infographic.png', alt:'600W horizontal axis wind turbine marketing infographic; model number and technical specifications pending verification'},
+    {src:'assets/products/600w-horizontal-01-main.webp', alt:'Installed full view of the three-blade 600W horizontal axis wind turbine'},
+    {src:'assets/products/600w-horizontal-02-installed-front.webp', alt:'Installed front three-quarter view of the 600W horizontal axis wind turbine'},
+    {src:'assets/products/600w-horizontal-03-installed-rear.webp', alt:'Installed rear three-quarter view of the 600W horizontal axis wind turbine'},
+    {src:'assets/products/600w-horizontal-04-generator-side.webp', alt:'Close-up side view of the 600W horizontal axis wind turbine generator housing'},
+    {src:'assets/products/600w-horizontal-05-hub-front.webp', alt:'Close-up of the rotor hub and blades of the 600W horizontal axis wind turbine'},
+    {src:'assets/products/600w-horizontal-06-factory-assembly.webp', alt:'Factory assembly views of the 600W horizontal axis wind turbine'},
+    {src:'assets/products/600w-horizontal-07-tail-assembly.webp', alt:'Factory photographs of the tail assembly of the 600W horizontal axis wind turbine'},
+    {src:'assets/products/600w-horizontal-08-components.webp', alt:'Disassembled components and three blades of the 600W horizontal axis wind turbine'},
+    {src:'assets/products/600w-horizontal-09-exploded-diagram.webp', alt:'Exploded assembly drawing of the three-blade horizontal axis wind turbine'},
+  ];
+  horizontal600.specifications = [
+    ['Rated power','600W'],
+    ['Axis orientation','Horizontal'],
+    ['Number of blades','3'],
+    ['Rated voltage','Contact Us'],
+    ['Maximum power','Contact Us'],
+    ['Start-up wind speed','Contact Us'],
+    ['Rated wind speed','Contact Us'],
+    ['Survival wind speed','Contact Us'],
+    ['Rotor diameter','Contact Us'],
+    ['Blade material','Contact Us'],
+    ['Generator type','Contact Us'],
+    ['Weight','Contact Us']
+  ];
+}
+
 // Replace image with a verified local product photo path; leave empty for the placeholder.
 products.forEach(product => {
-  product.image = product.gallery?.[0]?.src || product.image || '';
-  product.imageAlt = product.gallery?.[0]?.alt || product.imageAlt || product.title;
+  product.image = product.image || product.gallery?.[0]?.src || '';
+  product.imageAlt = product.imageAlt || product.gallery?.[0]?.alt || product.title;
 });
 function productSpecs(p) {
   if (p.specifications) return p.specifications;
