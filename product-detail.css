@@ -52,3 +52,31 @@
   .image-viewer .viewer-zoom-in,
   .image-viewer .viewer-zoom-out {min-width:40px;min-height:40px}
 }
+
+/* FK-1000 technical details and direct quotation form. */
+.fk1000-page .spec-subheading {font-size:20px;letter-spacing:-.02em;margin:30px 0 12px}
+.fk1000-page .spec-disclaimer {font-size:13px;color:var(--muted);line-height:1.7;margin:12px 0 24px}
+.fk1000-page .spec-table {margin:12px 0 22px}
+.fk1000-page .spec-table th {width:42%}
+.fk1000-page .spec-table td {overflow-wrap:anywhere}
+.fk1000-page .fk1000-quote-section {scroll-margin-top:24px}
+.fk1000-page .fk1000-quote-layout {display:grid;grid-template-columns:minmax(0,1.6fr) minmax(260px,1fr);gap:32px;align-items:start;margin-top:28px}
+.fk1000-page .fk1000-quote-form {background:#edf0e8;border:1px solid var(--line);border-radius:6px;padding:28px;min-width:0}
+.fk1000-page .fk1000-form-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 18px}
+.fk1000-page .fk1000-quote-form label {display:block;font-size:12px;margin-bottom:8px}
+.fk1000-page .fk1000-quote-form input,
+.fk1000-page .fk1000-quote-form select,
+.fk1000-page .fk1000-quote-form textarea {display:block;width:100%;background:#fff;min-height:44px;margin-bottom:20px;font-size:14px}
+.fk1000-page .fk1000-quote-form textarea {min-height:95px}
+.fk1000-page .fk1000-quote-form .honeypot {display:none}
+.fk1000-page .fk1000-submit {width:100%;min-height:50px;justify-content:space-between;font-size:14px}
+.fk1000-page .fk1000-quote-form .form-note {font-size:11px;color:var(--muted);line-height:1.6;margin:14px 0 0}
+.fk1000-page #fk1000-form-status {font-size:12px;line-height:1.5;margin:8px 0 0}
+.fk1000-page .fk1000-contact-aside {background:var(--ink);color:var(--paper);border-radius:6px;padding:30px;min-width:0}
+.fk1000-page .fk1000-contact-aside h3 {font-size:22px;line-height:1.3;margin:0 0 16px}
+.fk1000-page .fk1000-contact-aside p {font-size:14px;line-height:1.7;color:#e2e9e2}
+.fk1000-page .fk1000-contact-link {display:flex;width:100%;justify-content:space-between;gap:12px;margin:20px 0}
+.fk1000-page .fk1000-email-link {display:inline-block;font-weight:700;font-size:14px;text-decoration:underline;text-underline-offset:4px}
+.fk1000-page .fk1000-contact-aside .fk1000-sales-note {font-size:12px;color:#cbd9cf;margin:24px 0 0}
+@media(max-width:900px){.fk1000-page .fk1000-quote-layout{grid-template-columns:1fr}}
+@media(max-width:600px){.fk1000-page .fk1000-form-grid{grid-template-columns:1fr}.fk1000-page .fk1000-quote-form,.fk1000-page .fk1000-contact-aside{padding:20px}.fk1000-page .spec-table th{width:46%}}
