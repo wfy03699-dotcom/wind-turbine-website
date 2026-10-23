@@ -8,7 +8,7 @@ function renderProducts(filter = 'all') {
     .sort((a, b) => Number(Boolean(b.image)) - Number(Boolean(a.image)));
   grid.innerHTML = visible.map(p => `
     <article class="product-card" aria-labelledby="card-${p.id}">
-      <div class="product-art">${['horizontal-400', 'horizontal-600'].includes(p.id) ? `<button class="product-preview" type="button" data-preview="${p.id}" aria-label="Enlarge ${p.title} product sheet">${productImage(p)}<span class="preview-hint">Click to enlarge</span></button>` : productImage(p)}</div>
+      <div class="product-art">${['horizontal-400', 'horizontal-600', 'horizontal-1000'].includes(p.id) ? `<button class="product-preview" type="button" data-preview="${p.id}" aria-label="Enlarge ${p.title} product sheet">${productImage(p)}<span class="preview-hint">Click to enlarge</span></button>` : productImage(p)}</div>
       <div class="product-body">
         <p class="product-category">${p.axis === 'vertical' ? 'Vertical' : 'Horizontal'} axis · ${p.type === 'generator' ? 'Generator' : 'Wind turbine'}</p>
         <h3 id="card-${p.id}">${p.title}</h3>
