@@ -16,6 +16,7 @@
 <script src="products.js" defer></script>
 <script src="image-viewer.js" defer></script>
 <script src="600w-turbine-detail.js" defer></script>
+<script src="catalog-inquiry.js" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -51,7 +52,7 @@
 <div class="voltage-highlight"><dt>Voltage</dt><dd>Confirm Options</dd></div>
 </dl>
 <p class="turbine-lead">Explore this three-blade horizontal-axis wind turbine through real installation photographs, generator details and component views. Confirm the electrical configuration and installation requirements before ordering.</p>
-<a class="button dark" href="index.html?product=horizontal-600#contact">Request a Quote <span aria-hidden="true">↗</span></a>
+<a class="button dark" href="#product-inquiry">Request a Quote <span aria-hidden="true">↗</span></a>
 <p class="quote-note">Tell us your country, intended use, required voltage and controller or battery setup.</p>
 <ul class="turbine-summary"><li>600W rated power</li><li>Three-blade horizontal-axis configuration</li><li>Real installation and factory photographs</li></ul>
 <p class="operating-note">Rated power is not continuous output. Actual energy production depends on site wind conditions and the complete electrical system. Ask for a verified power curve.</p>
@@ -94,7 +95,41 @@
 <h3>Which voltage should I choose?</h3><p>Contact us with your battery and inverter details so we can confirm the available configuration.</p>
 <h3>Is a controller included?</h3><p>Please confirm the included accessories and controller option in your quotation.</p>
 </section>
-<section class="quote-panel turbine-section" aria-labelledby="quote-heading"><div><p class="eyebrow light">PROJECT SUPPORT</p><h2 id="quote-heading">Request a Quote</h2><p>Share your location, desired voltage and intended application. We will confirm specifications, compatibility and available accessories.</p></div><a class="button lime" href="index.html?product=horizontal-600#contact">Request a Quote ↗</a></section>
+<section class="turbine-section catalog-quote-section" id="product-inquiry" aria-labelledby="catalog-quote-heading">
+<p class="eyebrow">PRODUCT-SPECIFIC INQUIRY</p>
+<h2 id="catalog-quote-heading">Request a Quote</h2>
+<p>Ask for a quotation for <strong id="catalog-quote-product">600W Horizontal Axis Wind Turbine</strong>. Tell us your requirements and delivery destination so our team can confirm the available configuration and shipping details.</p>
+<div class="catalog-quote-layout">
+<form class="catalog-quote-form" id="catalog-inquiry-form" name="catalog-product-inquiry" method="POST" action="/thank-you.html" data-netlify="true" netlify-honeypot="bot-field">
+<input type="hidden" name="form-name" value="catalog-product-inquiry">
+<input type="hidden" name="product" id="catalog-form-product" value="600W Horizontal Axis Wind Turbine">
+<input type="hidden" name="product-id" id="catalog-form-product-id" value="horizontal-600">
+<p class="honeypot" aria-hidden="true"><label>Leave this field empty<input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+<div class="catalog-form-grid">
+<div><label for="catalog-name">Full name <span aria-hidden="true">*</span></label><input id="catalog-name" name="name" autocomplete="name" maxlength="120" required></div>
+<div><label for="catalog-email">Email address <span aria-hidden="true">*</span></label><input id="catalog-email" name="email" type="email" autocomplete="email" maxlength="254" required></div>
+<div><label for="catalog-country">Delivery country / region <span aria-hidden="true">*</span></label><input id="catalog-country" name="country" autocomplete="country-name" maxlength="100" required></div>
+<div><label for="catalog-quantity">Quantity <span aria-hidden="true">*</span></label><input id="catalog-quantity" name="quantity" type="number" min="1" max="10000" step="1" value="1" required></div>
+<div><label for="catalog-voltage">Preferred voltage <span aria-hidden="true">*</span></label><input id="catalog-voltage" name="preferred-voltage" placeholder="e.g. 12V, 48V, 220V or please advise" maxlength="80" required></div>
+<div><label for="catalog-application">Intended application <span aria-hidden="true">*</span></label><select id="catalog-application" name="application" required>
+<option value="">Select an application</option><option>Off-grid home / cabin</option><option>Farm / rural property</option><option>Wind-solar hybrid system</option><option>Generator / equipment integration</option><option>Other / not sure yet</option>
+</select></div>
+</div>
+<label for="catalog-setup">Battery, inverter, controller or system setup (optional)</label><textarea id="catalog-setup" name="system-setup" rows="3" maxlength="1500" placeholder="Please describe your battery voltage, inverter, controller, RPM or other requirements"></textarea>
+<label for="catalog-message">Project details or questions (optional)</label><textarea id="catalog-message" name="message" rows="4" maxlength="3000" placeholder="Shipping city, operating conditions, accessories or other questions"></textarea>
+<button class="button dark catalog-submit" type="submit">Send Product Inquiry <span aria-hidden="true">↗</span></button>
+<p class="form-note">Fields marked * are required. Your details will be used to respond to this inquiry. Product specifications, pricing and delivery are subject to confirmation.</p>
+<p id="catalog-form-status" role="status" aria-live="polite"></p>
+</form>
+<aside class="catalog-contact-aside" aria-label="Other ways to contact sales">
+<h3>Contact our sales team</h3>
+<p>Send the model, quantity, voltage and delivery country via WhatsApp or email. We will confirm the available options before quotation.</p>
+<a class="button lime catalog-whatsapp-link" href="https://wa.me/8619825532553" target="_blank" rel="noopener noreferrer">Ask on WhatsApp ↗</a>
+<a class="catalog-email-link" href="mailto:1683750532@qq.com">Email sales ↗</a>
+<p class="catalog-sales-note">For model families, specify the exact power, output requirements and operating speed if known.</p>
+</aside>
+</div>
+</section>
 </main>
 <footer><a class="brand" href="index.html">✳ Rewindagic.</a><span>Turning wind into possibility.</span><a href="index.html#products">Explore all products ↗</a></footer>
 <dialog class="image-viewer" id="image-lightbox" aria-labelledby="lightbox-caption"><button class="lightbox-close" type="button" aria-label="Close enlarged image">✕</button><div class="viewer-toolbar"><button class="viewer-zoom" type="button" aria-pressed="false">View at full size</button><a class="viewer-original" target="_blank" rel="noopener">Open original image ↗</a></div><div class="lightbox-viewport"><img id="lightbox-image" class="viewer-image" alt=""></div><p id="lightbox-caption" class="viewer-caption"></p></dialog>
