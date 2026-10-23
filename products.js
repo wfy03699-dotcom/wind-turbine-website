@@ -53,14 +53,20 @@ products.push({
     ['Rated power', '1000W'],
     ['Axis orientation', 'Horizontal'],
     ['Number of blades', '3'],
-    ['Voltage range', '48V–220V (confirm configuration)'],
-    ['Weight', '60 kg (owner-supplied)'],
-    ['Electrical output type', 'Contact Us'],
-    ['Start-up wind speed', 'Contact Us'],
-    ['Rated wind speed', 'Contact Us'],
-    ['Rotor diameter', 'Contact Us'],
-    ['Blade material', 'Contact Us'],
-    ['Controller and accessories', 'Contact Us']
+    ['Voltage range', '48V–220V (confirm selected option)'],
+    ['Weight', '60 kg (supplied artwork; confirm)'],
+    ['Maximum power', '1100W (marketing artwork; verify)'],
+    ['Start-up wind speed', '2 m/s (marketing artwork; verify)'],
+    ['Rated wind speed', '12 m/s (marketing artwork; verify)'],
+    ['Survival wind speed', '50 m/s (marketing artwork; verify)'],
+    ['Rotor diameter', '2.8 m (marketing artwork; verify)'],
+    ['Blade length', '1.4 m (marketing artwork; verify)'],
+    ['Blade material', 'Nylon fiber (marketing artwork; verify)'],
+    ['Body material', 'Aluminum alloy (marketing artwork; verify)'],
+    ['Generator type', '3-phase permanent magnet AC synchronous (artwork; verify)'],
+    ['Control system', 'Electromagnetic (artwork; verify)'],
+    ['Controller and included accessories', 'Confirm before order']
+
   ]
 });
 
