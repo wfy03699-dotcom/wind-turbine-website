@@ -23,3 +23,7 @@
 .vertical-series-page .turbine-summary{margin-top:25px}
 .vertical-series-page .operating-note{line-height:1.65}
 @media(max-width:600px){.vertical-series-page .series-power-options button{flex:1 1 40%}.vertical-series-page .series-thumbnails img{width:72px;height:72px}}
+
+.vertical-series-page .series-thumbnails{flex-wrap:wrap}
+.vertical-series-page .series-thumbnails button{flex:0 0 auto}
+.vertical-series-page .series-thumbnails button:focus-visible{outline:3px solid #84cc16;outline-offset:3px}
