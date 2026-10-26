@@ -15,6 +15,12 @@
     if (modelLabel) modelLabel.textContent = product.title;
   }
 
+  const powerSelect = document.querySelector('#catalog-power');
+  const baseProduct = productField.value;
+  form.addEventListener('submit', () => {
+    if (powerSelect?.value) productField.value = baseProduct + ' — ' + powerSelect.value;
+  });
+
   form.addEventListener('submit', event => {
     if (location.protocol === 'file:' || ['localhost', '127.0.0.1', ''].includes(location.hostname)) {
       event.preventDefault();
@@ -27,9 +33,11 @@
   const message = () => [
     'Hello, I would like a quotation for ' + productField.value + '.',
     'Model ID: ' + productIdField.value,
+    ...(document.querySelector('#catalog-power') ? ['Rated power: ' + (getValue('catalog-power') || 'please advise')] : []),
     'Quantity: ' + (getValue('catalog-quantity') || 'please advise'),
     'Preferred voltage: ' + (getValue('catalog-voltage') || 'please advise'),
     'Delivery country: ' + (getValue('catalog-country') || 'please advise'),
+    ...(document.querySelector('#catalog-color') ? ['Preferred finish: ' + (getValue('catalog-color') || 'please advise')] : []),
     'Application: ' + (getValue('catalog-application') || 'not specified'),
     'System setup: ' + (getValue('catalog-setup') || 'not specified'),
     'Other requirements: ' + (getValue('catalog-message') || 'not specified'),
