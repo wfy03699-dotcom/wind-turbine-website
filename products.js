@@ -116,7 +116,10 @@ products.push({
   description: 'A two-blade vertical-axis wind turbine family offered in 400W, 600W, 1000W and 2000W rated-power options. See real green and white turbine photographs. Voltage, output, dimensions and other model-specific specifications require confirmation.',
   gallery: [
     {src:'assets/products/vertical-400-2000-green.webp',alt:'Real outdoor photograph of green two-blade vertical-axis wind turbine'},
-    {src:'assets/products/vertical-400-2000-white.webp',alt:'Real outdoor photograph of white two-blade vertical-axis wind turbine'}
+    {src:'assets/products/vertical-400-2000-white.webp',alt:'Real outdoor photograph of white two-blade vertical-axis wind turbine'},
+    {src:'assets/products/vertical-400-2000-comparison.jpg',alt:'White and green two-blade vertical-axis wind turbines displayed side by side outdoors'},
+    {src:'assets/products/vertical-400-2000-white-side.jpg',alt:'Side view of the white vertical-axis wind turbine outdoors'},
+    {src:'assets/products/vertical-400-2000-installation.jpg',alt:'White vertical-axis wind turbine installed on an outdoor demonstration pole'}
   ],
   specifications: [
     ['Rated power options','400W / 600W / 1000W / 2000W'],
