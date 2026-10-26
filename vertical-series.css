@@ -3,7 +3,9 @@
 .vertical-series-page .series-subheading{font-size:17px;color:var(--muted);margin:16px 0 18px}
 .vertical-series-page .series-gallery{max-width:660px}
 .vertical-series-page .series-main-image{display:block;position:relative;width:100%;border:1px solid var(--line);border-radius:5px;overflow:hidden;background:#dfe8de;cursor:zoom-in;padding:0}
-.vertical-series-page .series-main-image img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover}
+/* Keep poster and every product photo at its complete native aspect ratio.
+   The previous image height attribute + cover crop cut off both sides of the square poster. */
+.vertical-series-page .series-main-image img{display:block;width:100%;height:auto;max-width:100%;max-height:none;aspect-ratio:auto;object-fit:contain}
 .vertical-series-page .series-main-image span{position:absolute;bottom:14px;right:14px;padding:9px 12px;background:var(--ink);color:#fff;border-radius:4px;font-size:12px;font-weight:700}
 .vertical-series-page .series-thumbnails{display:flex;gap:12px;margin:12px 0 18px}
 .vertical-series-page .series-thumbnails button{border:2px solid transparent;padding:0;border-radius:5px;overflow:hidden;cursor:pointer;background:#e8eee6}
