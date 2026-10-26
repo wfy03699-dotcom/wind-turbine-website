@@ -15,6 +15,12 @@
     if (modelLabel) modelLabel.textContent = product.title;
   }
 
+  const powerSelect = document.querySelector('#catalog-power');
+  const baseProduct = productField.value;
+  form.addEventListener('submit', () => {
+    if (powerSelect?.value) productField.value = baseProduct + ' — ' + powerSelect.value;
+  });
+
   form.addEventListener('submit', event => {
     if (location.protocol === 'file:' || ['localhost', '127.0.0.1', ''].includes(location.hostname)) {
       event.preventDefault();
