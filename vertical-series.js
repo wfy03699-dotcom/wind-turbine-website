@@ -12,7 +12,6 @@
     const poster = new Image();
     poster.onload = () => {
       const thumbs = document.querySelector('.series-thumbnails');
-      const first = thumbs.querySelector('[data-select-image]');
       const button = document.createElement('button');
       button.type = 'button';
       button.dataset.selectImage = posterPath;
