@@ -11,7 +11,7 @@ if (selectedProduct) {
   document.querySelector('#detail-description').textContent = p.description;
   document.querySelector('#detail-specs').innerHTML = productSpecs(p).map(([label,value]) => `<tr><th scope="row">${label}</th><td>${value}</td></tr>`).join('');
   document.querySelector('#detail-table').hidden = false;
-  document.querySelector('#detail-quote').href = `index.html?product=${encodeURIComponent(p.id)}#contact`;
+  document.querySelector('#detail-quote').href = '#product-inquiry';
 } else {
   document.querySelector('#detail-title').textContent = 'Product not found';
   document.querySelector('#detail-description').textContent = 'Please return to the product catalog and select an available product.';
