@@ -27,9 +27,11 @@
   const message = () => [
     'Hello, I would like a quotation for ' + productField.value + '.',
     'Model ID: ' + productIdField.value,
+    ...(document.querySelector('#catalog-power') ? ['Rated power: ' + (getValue('catalog-power') || 'please advise')] : []),
     'Quantity: ' + (getValue('catalog-quantity') || 'please advise'),
     'Preferred voltage: ' + (getValue('catalog-voltage') || 'please advise'),
     'Delivery country: ' + (getValue('catalog-country') || 'please advise'),
+    ...(document.querySelector('#catalog-color') ? ['Preferred finish: ' + (getValue('catalog-color') || 'please advise')] : []),
     'Application: ' + (getValue('catalog-application') || 'not specified'),
     'System setup: ' + (getValue('catalog-setup') || 'not specified'),
     'Other requirements: ' + (getValue('catalog-message') || 'not specified'),
