@@ -10,7 +10,7 @@ function renderProducts(filter = 'all') {
     <article class="product-card" aria-labelledby="card-${p.id}">
       <div class="product-art">${['horizontal-400', 'horizontal-600', 'horizontal-1000', 'vertical-series-400-2000'].includes(p.id) ? `<button class="product-preview" type="button" data-preview="${p.id}" aria-label="Enlarge ${p.title} product sheet">${productImage(p)}<span class="preview-hint">Click to enlarge</span></button>` : productImage(p)}</div>
       <div class="product-body">
-        <p class="product-category">${p.axis === 'vertical' ? 'Vertical' : 'Horizontal'} axis · ${p.type === 'generator' ? 'Generator' : 'Wind turbine'}</p>
+        <p class="product-category">${p.axis === 'unconfirmed' ? 'FH Series · Wind turbine' : `${p.axis === 'vertical' ? 'Vertical' : 'Horizontal'} axis · ${p.type === 'generator' ? 'Generator' : 'Wind turbine'}`}</p>
         <h3 id="card-${p.id}">${p.title}</h3>
         <dl class="card-specs">
           <div><dt>${p.type === 'generator' ? 'Power range' : 'Rated power'}</dt><dd>${p.power}</dd></div>
