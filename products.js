@@ -213,7 +213,7 @@ function productSpecs(p) {
   return common.concat(fields.map(field => [field, 'Contact Us']));
 }
 function productImage(p) {
-  if (p.id === "vertical-fx-series-800-10kw") return '<div class="product-photo fx-range-card-art" role="img" aria-label="800 watt to 10 kilowatt FX series product range graphic; actual product images pending"><span>FX SERIES</span><strong>800W <em>—</em> 10KW</strong><span>VERTICAL AXIS WIND TURBINES</span><small>6 MODELS · POWER AND SPECIFICATIONS</small></div>';
+  if (p.id === "vertical-fx-series-800-10kw") return '<div class="product-photo fx-range-card-art" role="img" aria-label="FX series 800W to 10KW vertical-axis wind turbines"><img class="fx-card-poster" src="assets/products/fx-series-800w-10kw-main.png" alt="FX Series 800W to 10KW wind turbine product cover" loading="lazy" onload="this.parentNode.classList.add(\'has-poster\')" onerror="this.remove()"><span>FX SERIES</span><strong>800W <em>—</em> 10KW</strong><span>VERTICAL AXIS WIND TURBINES</span><small>6 MODELS · POWER AND SPECIFICATIONS</small></div>';
   return `<img class="product-photo" src="${p.image || 'assets/products/placeholder.svg'}" alt="${p.image ? p.imageAlt : `${p.title} — product photo not yet available`}" width="640" height="480" loading="lazy"${p.id === 'vertical-fx-600' ? ' onerror="this.onerror=null;this.src=\'assets/products/placeholder.svg\'"' : ''}>`;
 }
 
