@@ -48,3 +48,17 @@
 .fh-series-page .feature-grid article{background:#edf2ea}
 @media(max-width:930px){.fh-hero{grid-template-columns:1fr}.fh-cover{min-height:370px}}
 @media(max-width:540px){.fh-model-options{gap:6px}.fh-option{padding:12px 8px}.fh-option span{font-size:18px}.fh-option small{font-size:9px}.fh-cover{min-height:340px}.fh-big-number{font-size:clamp(34px,9.4vw,55px)}.fh-pill-row span{font-size:9px}.fh-series-page .turbine-section{margin-top:38px}}
+
+/* Full-size, uncropped FH-series product gallery. */
+.fh-photo-loaded[hidden],#fh-photo-placeholder[hidden]{display:none!important}
+.fh-photo-main{width:100%;display:block;position:relative;overflow:hidden;padding:0;background:#f5f7f4;border:1px solid #dce5dc;border-radius:10px;cursor:zoom-in}
+.fh-photo-main img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:contain}
+.fh-photo-main span{position:absolute;bottom:14px;right:14px;background:#133b30e8;color:#fff;border-radius:5px;padding:9px 12px;font-size:12px}
+.fh-photo-thumbs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:9px;margin:12px 0}
+.fh-photo-thumb{display:block;min-width:0;padding:3px;border:2px solid transparent;border-radius:7px;background:#f0f4ef;cursor:pointer}
+.fh-photo-thumb img{display:block;width:100%;aspect-ratio:1/1;object-fit:contain}
+.fh-photo-thumb.active{border-color:#176849}
+.fh-photo-thumb:focus-visible,.fh-photo-main:focus-visible{outline:3px solid #1a7759;outline-offset:3px}
+.fh-photo-caption,.fh-compliance-note{font-size:12px;line-height:1.6;color:#65786b}
+.fh-compliance-note{margin:10px 0 0}
+@media(max-width:540px){.fh-photo-thumbs{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}}
