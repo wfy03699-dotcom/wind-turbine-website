@@ -177,6 +177,29 @@ products.push({
   ]
 });
 
+
+// FH 400W / 600W / 800W range. Rotor orientation and model specifications
+// are intentionally left unconfirmed until owner documentation is received.
+products.push({
+  id:'fh-series-400-800',
+  axis:'unconfirmed',type:'turbine',
+  title:'FH Series 400W / 600W / 800W Wind Turbines',
+  power:'400W–800W',voltage:'Confirm model',
+  detailPage:'fh-400w-600w-800w-wind-turbines.html',
+  description:'Independent FH-family product listing for FH-400W (400W), FH-600W (600W) and FH-800W (800W). Turbine axis orientation, rated voltage, electrical output, blade dimensions and technical performance are pending manufacturer confirmation.',
+  specifications:[
+    ['Model options','FH-400W / FH-600W / FH-800W'],
+    ['Rated power options','400W / 600W / 800W (from model names)'],
+    ['Rotor orientation','To be confirmed'],
+    ['Rated voltage','To be confirmed'],
+    ['Start-up / rated wind speed','To be confirmed'],
+    ['Blade dimensions and materials','To be confirmed'],
+    ['Generator output and controller','To be confirmed'],
+    ['Product photos','Awaiting FH series photo upload'],
+    ['Technical documents','Awaiting model-specific data sheets']
+  ]
+});
+
 // Replace image with a verified local product photo path; leave empty for the placeholder.
 products.forEach(product => {
   product.image = product.image || product.gallery?.[0]?.src || '';
@@ -189,6 +212,7 @@ function productSpecs(p) {
   return common.concat(fields.map(field => [field, 'Contact Us']));
 }
 function productImage(p) {
+  if (p.id === 'fh-series-400-800') return '<div class="product-photo fh-card-cover" role="img" aria-label="FH Series wind turbines, 400W 600W 800W. Product photos pending"><small>NEW FH SERIES</small><strong>400W <em>·</em> 600W <em>·</em> 800W</strong><span>WIND TURBINE MODELS</span><small>SPECIFICATIONS BY REQUEST</small></div>';
   return `<img class="product-photo" src="${p.image || 'assets/products/placeholder.svg'}" alt="${p.image ? p.imageAlt : `${p.title} — product photo not yet available`}" width="640" height="480" loading="lazy"${p.id === 'vertical-fx-600' ? ' onerror="this.onerror=null;this.src=\'assets/products/placeholder.svg\'"' : ''}>`;
 }
 
