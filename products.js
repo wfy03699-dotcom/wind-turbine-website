@@ -137,6 +137,46 @@ products.push({
   ]
 });
 
+
+// New independent FX-600 series listing. Product photos show a VERTICAL rotor
+// although an early user message called it horizontal. Do not merge with the
+// existing unrelated horizontal-600 page.
+products.push({
+  id:'vertical-fx-600',axis:'vertical',type:'turbine',
+  title:'FX-600W 600W Vertical Axis Wind Turbine',
+  power:'600W',voltage:'12V–48V AC',
+  detailPage:'fx-600w-vertical-axis-wind-turbine.html',
+  description:'The FX-600 600W-rated three-blade vertical-axis wind turbine. Supplier lists 650W maximum, 1.3m/s start-up, 10m/s rated wind speed, 0.6m rotor diameter and 1.0m blade height. Confirm voltage option, tested power output and compatible controller before ordering.',
+  gallery:[
+    {src:'assets/products/fx-600w-main.png',alt:'FX-600 600W vertical-axis wind turbine model overview and specifications poster'},
+    {src:'assets/products/fx-600w-outdoor-front.jpg',alt:'Full view of white FX-600 three-blade vertical-axis turbine installed next to water'},
+    {src:'assets/products/fx-600w-outdoor-angle.jpg',alt:'Angled outdoor view of FX-600 three-blade vertical-axis wind turbine'},
+    {src:'assets/products/fx-600w-outdoor-side.jpg',alt:'Side-on view of the white FX-600 vertical-axis turbine'},
+    {src:'assets/products/fx-600w-green-dimensions.jpg',alt:'FX-600 green version with annotated diameter and height'},
+    {src:'assets/products/fx-600w-white-dimensions.jpg',alt:'FX-600 white version with annotated diameter and height'},
+    {src:'assets/products/fx-600w-blade-hub-detail.jpg',alt:'Close-up of FX-600 blade supports, bolts and generator assembly'},
+    {src:'assets/products/fx-600w-bottom-view.jpg',alt:'Underside of three-blade vertical-axis rotor with support arms'},
+    {src:'assets/products/fx-600w-color-options.jpg',alt:'FX-600 vertical-axis turbine displayed with white, green and red blades'},
+    {src:'assets/products/fx-600w-generator-detail.jpg',alt:'FX-600 generator housing and installation flange close-up'},
+    {src:'assets/products/fx-600w-system-diagram.jpg',alt:'Illustrative controller battery and inverter wiring overview; not installation instructions'}
+  ],
+  specifications:[
+    ['Model','FX-600'],['Rated power','600W'],['Maximum power','650W'],
+    ['Axis orientation','Vertical'],['Number of blades','3'],
+    ['Rated voltage (AC)','12V–48V'],['Start-up wind speed','1.3 m/s'],
+    ['Cut-in wind speed','2.5 m/s'],['Rated wind speed','10 m/s'],
+    ['Rotor diameter','0.6 m'],['Blade height','1.0 m'],
+    ['Blade material','Nylon / fiberglass'],['Blade colors','White / green / red'],
+    ['Packed weight','Less than 26 kg'],
+    ['Survival wind speed','≤40 m/s (supplier specification)'],
+    ['Control system','Electromagnetic'],['Installation height','2–12 m'],
+    ['Generator protection','IP54'],['Operating temperature','−25°C to +45°C'],
+    ['Operating humidity','≤90%'],['Altitude','≤4,500 m'],
+    ['Overspeed protection','Electromagnetic brake'],
+    ['Overload protection','Electromagnetic braking and unloading device']
+  ]
+});
+
 // Replace image with a verified local product photo path; leave empty for the placeholder.
 products.forEach(product => {
   product.image = product.image || product.gallery?.[0]?.src || '';
@@ -149,7 +189,7 @@ function productSpecs(p) {
   return common.concat(fields.map(field => [field, 'Contact Us']));
 }
 function productImage(p) {
-  return `<img class="product-photo" src="${p.image || 'assets/products/placeholder.svg'}" alt="${p.image ? p.imageAlt : `${p.title} — product photo not yet available`}" width="640" height="480" loading="lazy">`;
+  return `<img class="product-photo" src="${p.image || 'assets/products/placeholder.svg'}" alt="${p.image ? p.imageAlt : `${p.title} — product photo not yet available`}" width="640" height="480" loading="lazy"${p.id === 'vertical-fx-600' ? ' onerror="this.onerror=null;this.src=\'assets/products/placeholder.svg\'"' : ''}>`;
 }
 
 function productUrl(p) { return p.detailPage || `product.html?id=${encodeURIComponent(p.id)}`; }

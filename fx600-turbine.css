@@ -1,0 +1,16 @@
+/* Independent FX-600 three-blade vertical-axis wind turbine. */
+.fx600-page .turbine-hero{align-items:start}
+.fx600-page #fx600-main-button{width:100%;min-height:0}
+.fx600-page #fx600-main-button[hidden]{display:none}
+.fx600-page #fx600-main-photo{display:block;width:100%;height:auto;max-width:100%;object-fit:contain;aspect-ratio:auto}
+.fx600-page .series-gallery{width:100%;max-width:680px}
+.fx600-page .series-thumbnails{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin:12px 0 14px}
+.fx600-page .series-thumbnails button{width:100%;max-width:110px;aspect-ratio:1;min-width:0}
+.fx600-page .series-thumbnails img{width:100%;height:100%;object-fit:cover}
+.fx600-page .series-main-image img{object-fit:contain}
+.fx600-page .series-gallery .asset-notice{font-size:15px;line-height:1.7}
+.fx600-page .turbine-intro .series-subheading{line-height:1.6}
+.fx600-page .series-spec-table th[scope="row"]{width:45%;font-weight:600}
+.fx600-page .series-spec-table td{text-align:left}
+.fx600-page #catalog-model[readonly]{background:#edf0e8;color:#163b32}
+@media(max-width:650px){.fx600-page .series-thumbnails{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.fx600-page .turbine-highlights dd{font-size:22px}}
