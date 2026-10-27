@@ -177,6 +177,30 @@ products.push({
   ]
 });
 
+
+// New independent FX-800 to FX-10K vertical-axis product family based on the
+// owner's FX-series parameter sheet. Original 800W–10KW photos pending.
+products.push({
+  id:'vertical-fx-series-800-10kw',axis:'vertical',type:'turbine',
+  title:'800W–10KW FX Series Vertical Axis Wind Turbines',
+  power:'800W–10KW',voltage:'12–220V AC (model-dependent)',
+  detailPage:'800w-10kw-vertical-axis-wind-turbines.html',
+  description:'Six FX-series three-blade vertical-axis wind turbines: FX-800 / 800W, FX-1K / 1KW, FX-2K / 2KW, FX-3K / 3KW, FX-5K / 5KW and FX-10K / 10KW. Supplier-listed voltage, size and wind-speed specifications vary by model. Ask for verified test results and configuration.',
+  specifications:[
+    ['Power model options','FX-800 (800W), FX-1K (1KW), FX-2K (2KW), FX-3K (3KW), FX-5K (5KW), FX-10K (10KW)'],
+    ['Axis orientation','Vertical'],
+    ['Number of blades','3'],
+    ['Rated voltage by model','12–48V AC (FX-800), 24V / 48V (FX-1K), 24–96V AC (FX-2K), 48–220V AC (FX-3K / 5K / 10K)'],
+    ['Start-up wind speed','1.3m/s (FX-800), 2m/s (other listed models)'],
+    ['Rated wind speed','10m/s (FX-800 / 1K / 2K), 12m/s (FX-3K / 5K / 10K)'],
+    ['Rotor diameter','0.8m–3.0m (model-dependent)'],
+    ['Blade height','1.32m–5.0m (model-dependent)'],
+    ['Blade material','Nylon / fiberglass'],
+    ['Generator protection','IP54 (supplier value)'],
+    ['Documentation','Supplier-provided figures; final specifications, test report, conformity documentation and images require verification']
+  ]
+});
+
 // Replace image with a verified local product photo path; leave empty for the placeholder.
 products.forEach(product => {
   product.image = product.image || product.gallery?.[0]?.src || '';
@@ -189,6 +213,7 @@ function productSpecs(p) {
   return common.concat(fields.map(field => [field, 'Contact Us']));
 }
 function productImage(p) {
+  if (p.id === "vertical-fx-series-800-10kw") return '<div class="product-photo fx-range-card-art" role="img" aria-label="FX series 800W to 10KW vertical-axis wind turbines"><img class="fx-card-poster" src="assets/products/fx-series-800w-10kw-main.png" alt="FX Series 800W to 10KW wind turbine product cover" loading="lazy" onload="this.parentNode.classList.add(\'has-poster\')" onerror="this.remove()"><span>FX SERIES</span><strong>800W <em>—</em> 10KW</strong><span>VERTICAL AXIS WIND TURBINES</span><small>6 MODELS · POWER AND SPECIFICATIONS</small></div>';
   return `<img class="product-photo" src="${p.image || 'assets/products/placeholder.svg'}" alt="${p.image ? p.imageAlt : `${p.title} — product photo not yet available`}" width="640" height="480" loading="lazy"${p.id === 'vertical-fx-600' ? ' onerror="this.onerror=null;this.src=\'assets/products/placeholder.svg\'"' : ''}>`;
 }
 
