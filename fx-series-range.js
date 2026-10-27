@@ -39,9 +39,23 @@
 (() => {
   const photos=[
     {src:'assets/products/fx-series-800w-10kw-main.png',alt:'FX Series 800W to 10KW vertical-axis wind turbine main promotional image'},
-    {src:'assets/products/fx-series-800w-10kw-specifications.png',alt:'FX-800 FX-1K FX-2K FX-3K FX-5K FX-10K technical specification infographic'}
-  ];
-  const gallery=document.querySelector('#fx-photo-loaded');
+    {src:'assets/products/fx-series-800w-10kw-specifications.png',alt:'FX-800 FX-1K FX-2K FX-3K FX-5K FX-10K technical specification infographic'},
+    {src:'assets/products/fx-series-photo-01-indoor-white.jpg',alt:'Related vertical-axis turbine, indoor white model photographed from the front'},
+    {src:'assets/products/fx-series-photo-02-indoor-angle.jpg',alt:'Related vertical-axis wind turbine white blades and multicolor center, indoor view'},
+    {src:'assets/products/fx-series-photo-03-indoor-front.jpg',alt:'Related vertical-axis turbine, indoor front angle with white blades'},
+    {src:'assets/products/fx-series-photo-04-indoor-full-view.jpg',alt:'Full view of a related three-blade vertical-axis white wind turbine indoors'},
+    {src:'assets/products/fx-series-photo-05-waterfront-view.jpg',alt:'Representative three-blade white vertical-axis wind turbine outdoors near waterfront'},
+    {src:'assets/products/fx-series-photo-06-waterfront-angle.jpg',alt:'Representative three-blade vertical-axis wind turbine by the water, angled view'},
+    {src:'assets/products/fx-series-photo-07-waterfront-side.jpg',alt:'Representative vertical-axis turbine white blades from the lakeside'},
+    {src:'assets/products/fx-series-photo-08-outdoor-open-sky.jpg',alt:'Representative three-blade vertical-axis turbine outdoors with blue sky'},
+    {src:'assets/products/fx-series-photo-09-outdoor-blue-sky.jpg',alt:'Representative three-blade vertical-axis wind turbine under blue sky'},
+    {src:'assets/products/fx-series-photo-10-outdoor-red-blue-hub.jpg',alt:'Representative white-blade turbine with red and blue center hub installed outdoors'},
+    {src:'assets/products/fx-series-photo-11-outdoor-blue-yellow-hub.jpg',alt:'Representative white-blade turbine with blue and yellow central assembly outdoors'},
+    {src:'assets/products/fx-series-photo-12-generator-close-up.jpg',alt:'Close-up of a sample wind turbine generator and support mount'},
+    {src:'assets/products/fx-series-photo-13-blade-arm-fasteners.jpg',alt:'Close-up of turbine blade-arm bolts and central mounting plate'},
+    {src:'assets/products/fx-series-photo-14-generator-hub-white.jpg',alt:'Close-up of white generator housing and attachment assembly'},
+    {src:'assets/products/fx-series-photo-15-generator-mount.jpg',alt:'Generator mount flange and lower attachment detail'}
+  ];  const gallery=document.querySelector('#fx-photo-loaded');
   const fallback=document.querySelector('#fx-photo-fallback');
   const status=document.querySelector('#fx-photo-status');
   const thumbs=document.querySelector('#fx-photo-thumbs');
@@ -71,13 +85,13 @@
     if(!available.length)return;
     gallery.hidden=false;
     fallback.hidden=true;
-    status.textContent='Browse the actual product promotional image and FX series technical specification chart. Select a thumbnail and click the large image for full resolution.';
+    status.textContent='Browse the series main cover, power specification infographic, and representative original turbine photographs. Photos illustrate related physical configurations; confirm the exact model before ordering.';
     available.forEach((photo,i)=>{
       const button=document.createElement('button');
       button.type='button';
-      button.setAttribute('aria-label',i===0?'Show first product image':'Show model technical specifications');
+      button.setAttribute('aria-label',i===0?'Show series main image':i===1?'Show model technical specification chart':'Show real turbine photograph '+(i-1));
       const tile=document.createElement('img');
-      tile.src=photo.src;tile.alt=i===0?'Promotional cover':'Specification infographic';
+      tile.src=photo.src;tile.alt=i===0?'Promotional cover':i===1?'Specification infographic':'Photo '+(i-1);
       tile.loading=i?'lazy':'eager';tile.width=112;tile.height=112;
       button.appendChild(tile);
       thumbs.appendChild(button);
