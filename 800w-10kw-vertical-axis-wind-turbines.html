@@ -9,7 +9,9 @@
 <meta property="og:type" content="product">
 <meta property="og:title" content="FX Series 800W–10KW Vertical Axis Wind Turbines | Rewindagic">
 <meta property="og:description" content="Explore six FX series turbine ratings and technical comparison data. Ask for a detailed model quotation.">
+<meta property="og:image" content="https://rewindagic-wind-energy.netlify.app/assets/products/fx-series-800w-10kw-main.png">
 <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="product-detail.css"><link rel="stylesheet" href="fx-series-range.css">
+<script src="image-viewer.js" defer></script>
 <script src="catalog-inquiry.js" defer></script>
 <script src="fx-series-range.js" defer></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProductGroup","name":"FX Series 800W–10KW Vertical Axis Wind Turbines","description":"FX-800, FX-1K, FX-2K, FX-3K, FX-5K and FX-10K, three-blade vertical-axis turbines. Specification figures are supplier-provided and must be confirmed for each model.","productGroupID":"fx-series-800w-10kw","hasVariant":[{"@type":"Product","name":"FX-800 800W Vertical Axis Wind Turbine","model":"FX-800","additionalProperty":[{"@type":"PropertyValue","name":"Rated power","value":"800W"},{"@type":"PropertyValue","name":"Rated voltage","value":"12–48V AC"}]},{"@type":"Product","name":"FX-1K 1KW Vertical Axis Wind Turbine","model":"FX-1K","additionalProperty":[{"@type":"PropertyValue","name":"Rated power","value":"1KW"},{"@type":"PropertyValue","name":"Rated voltage","value":"24V / 48V AC"}]},{"@type":"Product","name":"FX-2K 2KW Vertical Axis Wind Turbine","model":"FX-2K","additionalProperty":[{"@type":"PropertyValue","name":"Rated power","value":"2KW"},{"@type":"PropertyValue","name":"Rated voltage","value":"24–96V AC"}]},{"@type":"Product","name":"FX-3K 3KW Vertical Axis Wind Turbine","model":"FX-3K","additionalProperty":[{"@type":"PropertyValue","name":"Rated power","value":"3KW"},{"@type":"PropertyValue","name":"Rated voltage","value":"48–220V AC"}]},{"@type":"Product","name":"FX-5K 5KW Vertical Axis Wind Turbine","model":"FX-5K","additionalProperty":[{"@type":"PropertyValue","name":"Rated power","value":"5KW"},{"@type":"PropertyValue","name":"Rated voltage","value":"48–220V AC"}]},{"@type":"Product","name":"FX-10K 10KW Vertical Axis Wind Turbine","model":"FX-10K","additionalProperty":[{"@type":"PropertyValue","name":"Rated power","value":"10KW"},{"@type":"PropertyValue","name":"Rated voltage","value":"48–220V AC"}]}]}</script>
@@ -23,6 +25,16 @@
 <p class="eyebrow">FX SERIES / THREE-BLADE VERTICAL AXIS</p>
 <h1 id="fx-series-title">800W–10KW <span>Vertical Axis Wind Turbines.</span></h1>
 <p class="fx-range-lead">Six models. One place to compare rated power, voltage options and installation dimensions.</p>
+<div class="fx-photo-gallery" id="fx-photo-gallery">
+<div class="fx-photo-loaded" id="fx-photo-loaded" hidden>
+<button class="fx-photo-main" id="fx-photo-main" type="button" aria-label="Enlarge wind turbine product image">
+<img id="fx-photo-image" width="1254" height="1254" alt="">
+<span>Click to enlarge ↗</span>
+</button>
+<div class="fx-photo-thumbs" id="fx-photo-thumbs" role="group" aria-label="FX series product images"></div>
+<p class="fx-photo-detail-note">Image 1: product promotional cover. Image 2: 800W–10KW model specifications. Click either thumbnail to switch or click the image to enlarge.</p>
+</div>
+<div id="fx-photo-fallback">
 <div class="fx-series-visual" aria-label="FX series product range overview">
 <div class="fx-visual-top"><span>FX SERIES</span><span>WIND ENERGY / 06 MODELS</span></div>
 <strong>800<small>W</small><span class="fx-visual-dash">—</span>10<small>KW</small></strong>
@@ -30,7 +42,10 @@
 <p>Pick your model below to explore supplier-stated specifications.</p>
 <div class="fx-visual-models"><span>FX-800</span><span>FX-1K</span><span>FX-2K</span><span>FX-3K</span><span>FX-5K</span><span>FX-10K</span></div>
 </div>
-<p class="fx-no-photo"><strong>Original model photographs pending.</strong> This page uses a typographic range overview until manufacturer-confirmed images of these six models are supplied. Photos of the separate FX-600 and two-blade series are intentionally not substituted.</p>
+</div>
+</div>
+<p class="fx-no-photo" id="fx-photo-status">Our owner-supplied visual overview and specification images are being added. The technical table below contains supplier-provided data for individual FX models; product appearance in promotional imagery may differ across models.</p>
+<p class="fx-photo-legal">Advertising artwork mentions CE certification and efficiency without independent supporting documents. Please request the applicable declarations, test reports and confirmed model drawings before ordering. The diagram's generator-type description also requires confirmation.</p>
 </section>
 <section class="fx-range-config" aria-labelledby="model-options-heading">
 <p class="eyebrow">FIND YOUR CONFIGURATION</p>
@@ -138,4 +153,9 @@
 </section>
 </main>
 <footer><a class="brand" href="index.html">✳ Rewindagic.</a><span>Turning wind into possibility.</span><a href="index.html#products">Explore all products ↗</a></footer>
+<dialog class="image-viewer" id="image-lightbox" aria-labelledby="lightbox-caption">
+<button class="lightbox-close" type="button" aria-label="Close enlarged image">✕</button>
+<div class="viewer-toolbar"><button class="viewer-zoom" type="button" aria-pressed="false">View at full size</button><a class="viewer-original" target="_blank" rel="noopener">Open original image ↗</a></div>
+<div class="lightbox-viewport"><img class="viewer-image" alt=""></div><p id="lightbox-caption" class="viewer-caption"></p>
+</dialog>
 </body></html>
