@@ -61,3 +61,11 @@ dialog.image-viewer{width:min(1400px,96vw);max-width:96vw;max-height:94dvh;paddi
 .image-viewer .viewer-caption{font-size:12px;line-height:1.5;text-align:center;margin:12px 0 0}
 
 .home-page .product-preview .product-photo{padding-bottom:40px}
+
+/* FH series card is a labeled illustration, not a fabricated product photo. */
+.home-page .product-art .fh-card-cover{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;background:linear-gradient(125deg,#123e33,#2b7957);display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:clamp(16px,2vw,29px);gap:13px;color:white;text-align:left;overflow:hidden}
+.home-page .fh-card-cover small:first-child{font-size:11px;letter-spacing:.17em;color:#c6ebb9;font-weight:800}
+.home-page .fh-card-cover strong{font-size:clamp(16px,1.9vw,26px);letter-spacing:-.035em;line-height:1.3;white-space:normal;color:#fff}
+.home-page .fh-card-cover em{color:#d8f27a;font-style:normal}
+.home-page .fh-card-cover span{font-size:12px;font-weight:700;letter-spacing:.1em;color:#f3ffec}
+.home-page .fh-card-cover small:last-child{font-size:10px;letter-spacing:.1em;color:#d3e8d9}
