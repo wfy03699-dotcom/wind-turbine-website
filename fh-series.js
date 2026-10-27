@@ -10,11 +10,19 @@
   const select=document.querySelector('#catalog-power');
   const code=document.querySelector('#fh-model-selected');
   const power=document.querySelector('#fh-power-selected');
+  let refreshGallery=()=>{};
+  const whatsapp=document.querySelector('#fh-whatsapp-quote');
+  const whatsappAside=document.querySelector('.catalog-whatsapp-link');
   const activate=key=>{
     const selected=variants.find(v=>v.code===key);
     if(!selected)return;
     code.textContent=selected.code;
     power.textContent=selected.power;
+    const message='Hello, I would like a quotation for '+selected.code+' ('+selected.power+'). Please confirm voltage options, price and shipping.';
+    const url='https://wa.me/8619825532559?text='+encodeURIComponent(message);
+    if(whatsapp)whatsapp.href=url;
+    if(whatsappAside)whatsappAside.href=url;
+    refreshGallery(selected.code);
     if(select) select.value=selected.code+' / '+selected.power;
     options.forEach(el=>{
       const active=el.dataset.fh===selected.code;
@@ -60,6 +68,12 @@
         button.setAttribute('aria-pressed',String(i===index));
       });
     };
+    refreshGallery=model=>{
+      if(!gallery.length)return;
+      // Shared supplier photos are illustrative, not verified as model-specific.
+      const preferred={'FH-400W':1,'FH-600W':2,'FH-800W':3};
+      selectImage(Math.min(preferred[model]||0,gallery.length-1));
+    };
     const showGallery=()=>{
       if(!gallery.length)return;
       loaded.hidden=false;
@@ -78,7 +92,7 @@
         button.addEventListener('click',()=>selectImage(i));
         thumbs.append(button);
       });
-      selectImage(0);
+      refreshGallery(code.textContent);
       status.textContent=gallery.length+' product images available. Select a thumbnail to change the image, or click the large image to zoom.';
     };
     const checks=images.map(([file,alt],index)=>new Promise(resolve=>{
