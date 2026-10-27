@@ -32,3 +32,60 @@
   select?.addEventListener('change',()=>update(select.value.split(' — ')[0]));
   update('FX-800');
 })();
+
+/* FX series owner-supplied main image and model specification poster.
+   Only display an asset after it loads; until uploaded the product page
+   retains its attractive text-based cover, without broken images. */
+(() => {
+  const photos=[
+    {src:'assets/products/fx-series-800w-10kw-main.png',alt:'FX Series 800W to 10KW vertical-axis wind turbine main promotional image'},
+    {src:'assets/products/fx-series-800w-10kw-specifications.png',alt:'FX-800 FX-1K FX-2K FX-3K FX-5K FX-10K technical specification infographic'}
+  ];
+  const gallery=document.querySelector('#fx-photo-loaded');
+  const fallback=document.querySelector('#fx-photo-fallback');
+  const status=document.querySelector('#fx-photo-status');
+  const thumbs=document.querySelector('#fx-photo-thumbs');
+  const trigger=document.querySelector('#fx-photo-main');
+  const img=document.querySelector('#fx-photo-image');
+  if (!gallery || !fallback || !trigger || !thumbs || !img) return;
+  const viewer=typeof createImageViewer==='function'?createImageViewer('#image-lightbox'):null;
+  const loaded=src=>new Promise(resolve=>{
+    const test=new Image();
+    test.onload=()=>resolve(true);
+    test.onerror=()=>resolve(false);
+    test.src=src;
+  });
+  const show=(photo,button)=>{
+    img.src=photo.src;img.alt=photo.alt;
+    trigger.dataset.currentSrc=photo.src;
+    trigger.dataset.currentAlt=photo.alt;
+    trigger.setAttribute('aria-label','Enlarge '+photo.alt);
+    thumbs.querySelectorAll('button').forEach(el=>{
+      const selected=el===button;
+      el.classList.toggle('active',selected);
+      el.setAttribute('aria-pressed',String(selected));
+    });
+  };
+  Promise.all(photos.map(p=>loaded(p.src))).then(flags=>{
+    const available=photos.filter((_,i)=>flags[i]);
+    if(!available.length)return;
+    gallery.hidden=false;
+    fallback.hidden=true;
+    status.textContent='Browse the actual product promotional image and FX series technical specification chart. Select a thumbnail and click the large image for full resolution.';
+    available.forEach((photo,i)=>{
+      const button=document.createElement('button');
+      button.type='button';
+      button.setAttribute('aria-label',i===0?'Show first product image':'Show model technical specifications');
+      const tile=document.createElement('img');
+      tile.src=photo.src;tile.alt=i===0?'Promotional cover':'Specification infographic';
+      tile.loading=i?'lazy':'eager';tile.width=112;tile.height=112;
+      button.appendChild(tile);
+      thumbs.appendChild(button);
+      button.addEventListener('click',()=>show(photo,button));
+      if(i===0)show(photo,button);
+    });
+  });
+  trigger.addEventListener('click',()=>{
+    if(viewer && trigger.dataset.currentSrc)viewer.open(trigger.dataset.currentSrc,trigger.dataset.currentAlt,trigger);
+  });
+})();
