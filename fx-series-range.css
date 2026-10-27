@@ -57,3 +57,17 @@
 .fx-range-page #catalog-power{width:100%}
 @media(max-width:960px){.fx-range-hero{grid-template-columns:1fr;row-gap:26px}.fx-range-overview h1{max-width:none}.fx-series-visual{max-width:none}.fx-shared-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:540px){.fx-model-options{grid-template-columns:repeat(2,minmax(0,1fr))}.fx-shared-grid{grid-template-columns:1fr}.fx-range-config{padding:20px}.fx-series-visual>strong{font-size:clamp(37px,10vw,60px)}.fx-key-specs dd{font-size:17px}.fx-range-page .turbine-section{margin-top:36px}}
+
+/* Original full-resolution customer images. Never crop the text/chart panels. */
+.fx-range-page .fx-photo-gallery{max-width:100%;margin:0}
+.fx-range-page [hidden]{display:none!important}
+.fx-range-page .fx-photo-main{display:block;position:relative;width:100%;border-radius:10px;padding:0;border:1px solid #d6e2d5;background:#f2f7f2;overflow:hidden;cursor:zoom-in}
+.fx-range-page .fx-photo-main img{display:block;width:100%;height:auto;max-height:none;object-fit:contain;aspect-ratio:auto}
+.fx-range-page .fx-photo-main span{position:absolute;bottom:12px;right:12px;background:#10392d;color:white;border-radius:5px;padding:9px 12px;font-size:11px;font-weight:700}
+.fx-range-page .fx-photo-thumbs{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0 12px}
+.fx-range-page .fx-photo-thumbs button{width:100px;height:100px;max-width:calc(50% - 5px);padding:4px;border-radius:7px;border:2px solid #ccd9cc;background:white;cursor:pointer}
+.fx-range-page .fx-photo-thumbs button.active{border-color:#155141}
+.fx-range-page .fx-photo-thumbs button:focus-visible,.fx-range-page .fx-photo-main:focus-visible{outline:3px solid #a4d877;outline-offset:2px}
+.fx-range-page .fx-photo-thumbs img{display:block;width:100%;height:100%;object-fit:contain}
+.fx-range-page .fx-photo-detail-note{font-size:12px;line-height:1.65;color:#52675d;margin:0 0 15px}
+.fx-range-page .fx-photo-legal{font-size:11px;line-height:1.65;color:#7a685b;margin-top:6px}
