@@ -75,6 +75,7 @@ products.push({
 // Real 600W horizontal-axis product photographs. Do not substitute M6-6000/6000W specifications.
 const horizontal600 = products.find(p => p.id === 'horizontal-600');
 if (horizontal600) {
+  horizontal600.title = 'M6-600W Horizontal Axis Wind Turbine';
   horizontal600.detailPage = '600w-horizontal-axis-wind-turbine.html';
   horizontal600.voltage = 'Contact Us';
   horizontal600.description = 'A 600W-rated three-blade horizontal axis wind turbine. Review real installation and component photographs. Confirm voltage, controller compatibility, mounting requirements and tested performance before ordering.';
