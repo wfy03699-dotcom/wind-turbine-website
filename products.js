@@ -214,7 +214,7 @@ function productSpecs(p) {
   return common.concat(fields.map(field => [field, 'Contact Us']));
 }
 function productImage(p) {
-  if (p.id === 'fh-series-400-800') return '<div class="product-photo fh-card-cover" role="img" aria-label="FH Series wind turbines, 400W 600W 800W. Product photos pending"><small>NEW FH SERIES</small><strong>400W <em>·</em> 600W <em>·</em> 800W</strong><span>WIND TURBINE MODELS</span><small>SPECIFICATIONS BY REQUEST</small></div>';
+  // FH uses the same real product image renderer as the other product cards.
   return `<img class="product-photo" src="${p.image || 'assets/products/placeholder.svg'}" alt="${p.image ? p.imageAlt : `${p.title} — product photo not yet available`}" width="640" height="480" loading="lazy"${p.id === 'vertical-fx-600' ? ' onerror="this.onerror=null;this.src=\'assets/products/placeholder.svg\'"' : ''}>`;
 }
 
