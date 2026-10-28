@@ -9,7 +9,7 @@ for (const axis of ['vertical', 'horizontal']) products.push({id:`${axis}-genera
 
 products.push({
   id: 'horizontal-400', axis: 'horizontal', type: 'turbine',
-  title: '400W Horizontal Axis Wind Turbine', power: '400W', voltage: '12V / 24V / 48V DC',
+  title: 'S2-400W Horizontal Axis Wind Turbine', power: '400W', voltage: '12V / 24V / 48V DC',
   detailPage: '400w-horizontal-axis-wind-turbine.html',
   description: 'Explore renewable wind energy with a compact 400W horizontal axis wind turbine for residential systems, off-grid projects, farms and cabins. Its five-blade rotor, fiberglass nylon blades and aluminum alloy body offer a practical starting point for a site-specific wind energy installation. Actual output and sound levels depend on wind conditions, siting and installation.',
   // Owner-selected parameter sheet first, followed by the five original photographs.
