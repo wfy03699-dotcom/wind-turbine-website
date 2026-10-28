@@ -35,7 +35,7 @@ products.push({
 // FK-1000W owner-supplied infographic first, followed by seven original installation photographs.
 products.push({
   id: 'horizontal-1000', axis: 'horizontal', type: 'turbine',
-  title: '1000W Horizontal Axis Wind Turbine', power: '1000W', voltage: '48V–220V',
+  title: 'FK-1000W Horizontal Axis Wind Turbine', power: '1000W', voltage: '48V–220V',
   detailPage: '1000w-horizontal-axis-wind-turbine.html',
   description: 'FK-1000 horizontal-axis three-blade turbine. Supplier infographic lists 1000W rated / 1100W maximum power, 48V–220V, 2 m/s start-up wind speed, 12 m/s rated wind speed, 2.8 m rotor diameter and 60 kg weight. Confirm the voltage option, electrical output, tested performance and accessories before ordering.',
   gallery: [
