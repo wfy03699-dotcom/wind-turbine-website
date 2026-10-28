@@ -62,3 +62,23 @@
 .fh-photo-caption,.fh-compliance-note{font-size:12px;line-height:1.6;color:#65786b}
 .fh-compliance-note{margin:10px 0 0}
 @media(max-width:540px){.fh-photo-thumbs{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}}
+
+/* Mobile-friendly FH model selector, image gallery and WhatsApp inquiry. */
+.fh-whatsapp-quote{display:flex;justify-content:center;align-items:center;width:100%;margin-top:10px;text-align:center}
+.fh-photo-main img{max-height:75vh;object-fit:contain}
+.fh-photo-thumbs{scroll-margin-top:20px}
+@media(max-width:600px){
+ .fh-series-page .turbine-detail{padding-left:16px;padding-right:16px}
+ .fh-hero{gap:22px;margin-top:18px}
+ .fh-hero-media h1{font-size:clamp(32px,9vw,44px)}
+ .fh-config{padding:20px 15px}
+ .fh-model-options{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+ .fh-option{padding:14px 7px;min-height:74px}
+ .fh-option span{font-size:clamp(16px,5vw,21px)}
+ .fh-choice-display strong{font-size:clamp(17px,5vw,23px)}
+ .fh-photo-main span{font-size:11px;bottom:8px;right:8px}
+ .fh-photo-thumbs{display:flex;overflow-x:auto;gap:8px;padding:4px 2px 10px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+ .fh-photo-thumb{flex:0 0 74px;scroll-snap-align:start}
+ .fh-quote-link,.fh-whatsapp-quote{min-height:48px}
+ .fh-table-scroll{overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
+}
