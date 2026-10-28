@@ -112,7 +112,7 @@ if (horizontal600) {
 // variants; the provided 5–20kW parameter sheets do not verify the 400W–2000W specs.
 products.push({
   id: 'vertical-series-400-2000', axis: 'vertical', type: 'turbine',
-  title: '400W–2000W Vertical Axis Wind Turbine', power: '400W–2000W', voltage: 'Confirm option',
+  title: 'FS-400W-2000W Vertical Axis Wind Turbine', power: '400W–2000W', voltage: 'Confirm option',
   detailPage: '400w-2000w-vertical-axis-wind-turbine.html',
   description: 'A two-blade vertical-axis wind turbine family offered in 400W, 600W, 1000W and 2000W rated-power options. See real green and white turbine photographs. Voltage, output, dimensions and other model-specific specifications require confirmation.',
   gallery: [
