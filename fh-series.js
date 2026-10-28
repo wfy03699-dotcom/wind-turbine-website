@@ -95,18 +95,10 @@
       refreshGallery(code.textContent);
       status.textContent=gallery.length+' product images available. Select a thumbnail to change the image, or click the large image to zoom.';
     };
-    const checks=images.map(([file,alt],index)=>new Promise(resolve=>{
-      const test=new Image();
-      const src='assets/products/'+file;
-      test.onload=()=>resolve({src,alt,index});
-      test.onerror=()=>resolve(null);
-      test.src=src;
-    }));
-    Promise.all(checks).then(results=>{
-      results.filter(Boolean).sort((a,b)=>a.index-b.index).forEach(item=>gallery.push(item));
-      if(gallery.length)showGallery();
-      else status.textContent='Product photography is temporarily unavailable. Please contact us for full-size photos and specifications.';
-    });
+    // These files are committed to the site. Render immediately instead of waiting
+    // for every image request (one missing file previously blocked the whole gallery).
+    images.slice(0,10).forEach(([file,alt],index)=>gallery.push({src:'assets/products/'+file,alt,index}));
+    showGallery();
     main.addEventListener('click',()=>{
       const item=gallery[current];
       if(!item)return;
