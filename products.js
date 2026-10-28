@@ -203,6 +203,33 @@ products.push({
   ]
 });
 
+// FH 1–5kW vertical-axis turbine range, using the owner's uploaded photos in repo root.
+products.push({
+  id:'fh-series-1000-5000', axis:'vertical', type:'turbine',
+  title:'FH Series 1000W / 2000W / 3000W / 5000W Vertical Axis Wind Turbines',
+  power:'1000W–5000W', voltage:'48V–360V AC (model dependent)',
+  detailPage:'fh-1000-2000-3000-5000-wind-turbines.html',
+  image:'main-poster.png',
+  imageAlt:'FH 1000W to 5000W vertical axis wind turbine model overview and illustrative power curve',
+  description:'FH-1000, FH-2000, FH-3000 and FH-5000 vertical-axis turbine series. Three-blade aluminum-alloy rotors, three-phase permanent magnet generator and model-dependent AC output. Technical figures are supplier reported; the promotional power curve is illustrative, not verified test data.',
+  gallery:[
+    {src:'main-poster.png',alt:'FH 1000W to 5000W product poster with illustrative curve'},
+    {src:'1(3).jpg',alt:'FH vertical-axis wind turbine installation photo'},
+    {src:'3.jpg',alt:'FH turbine front installation photo'},
+    {src:'4(1).jpg',alt:'FH vertical turbine on rooftop'},
+    {src:'11(4).jpg',alt:'FH turbine rotor assembly'}
+  ],
+  specifications:[
+    ['Rated power options','1000W / 2000W / 3000W / 5000W'],
+    ['Maximum power options','1200W / 2200W / 3500W / 5500W'],
+    ['Rated AC voltage','48V / 48–96V / 48–220V / 96–360V (by model)'],
+    ['Start-up wind speed','2 m/s'],['Cut-in wind speed','3.5 m/s'],['Rated wind speed','11 m/s'],
+    ['Rotor diameter','1.8 / 2.0 / 2.4 / 3.0 m'],
+    ['Blade height','2.0 / 2.8 / 3.2 / 4.5 m'],
+    ['Generator','Three-phase permanent magnet'],['Protection','IP54 (supplier stated)']
+  ]
+});
+
 // Replace image with a verified local product photo path; leave empty for the placeholder.
 products.forEach(product => {
   product.image = product.image || product.gallery?.[0]?.src || '';
