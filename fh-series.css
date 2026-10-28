@@ -1,0 +1,84 @@
+/* FH 400W/600W/800W product family, pending owner-specific imagery. */
+.fh-series-page .turbine-detail{max-width:1320px}
+.fh-hero{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);gap:clamp(24px,4vw,64px);align-items:start;margin:38px 0 0}
+.fh-hero>*{min-width:0}
+.fh-hero-media h1{font-size:clamp(35px,4.1vw,61px);font-weight:700;line-height:1.09;letter-spacing:-.046em;margin:16px 0}
+.fh-hero-media h1 span{display:block;font-weight:450;color:#506e5f}
+.fh-lead{font-size:clamp(15px,1.4vw,19px);color:#52695e;line-height:1.6;max-width:610px;margin:0 0 26px}
+.fh-cover{min-height:410px;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(20px,3vw,42px);background:linear-gradient(135deg,#0d3f35 2%,#1d674b 55%,#327d62);border-radius:11px;color:white;box-shadow:0 20px 40px #154c2b20;position:relative;overflow:hidden}
+.fh-cover:before,.fh-cover:after{content:'';position:absolute;pointer-events:none;border:1px solid #ffffff1f;border-radius:50%}
+.fh-cover:before{width:460px;height:460px;right:-260px;top:-180px;box-shadow:0 0 0 60px #ffffff06,0 0 0 120px #ffffff05}
+.fh-cover:after{width:250px;height:250px;left:-190px;bottom:-110px}
+.fh-cover-top,.fh-cover-bottom{display:flex;gap:15px;justify-content:space-between;flex-wrap:wrap;align-items:center;font-size:10px;letter-spacing:.14em;font-weight:760;position:relative}
+.fh-cover-top>span,.fh-cover-bottom{color:#d6eede}
+.fh-cover-center{position:relative;margin:45px 0 36px}
+.fh-overline{font-size:11px;font-weight:700;letter-spacing:.18em;color:#c9e9ce}
+.fh-big-number{font-size:clamp(45px,5.7vw,76px);font-weight:790;letter-spacing:-.063em;line-height:1.18;white-space:nowrap;margin:11px 0}
+.fh-big-number span{font-size:.34em;font-weight:650;margin-left:1px;letter-spacing:0}
+.fh-big-number em{font-weight:400;font-style:normal;color:#d6f08a;margin:0 .11em}
+.fh-line{height:5px;background:linear-gradient(90deg,#c8ed8e,#77c5a4);border-radius:9px;width:100%;margin:18px 0 25px}
+.fh-pill-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.fh-pill-row span{font-size:11px;font-weight:720;border:1px solid #ffffff66;border-radius:4px;padding:11px 6px;text-align:center;background:#ffffff12}
+.fh-pending{font-size:12px;color:#637269;line-height:1.7;margin:18px 0 0}
+.fh-config{background:#fdfefa;border:1px solid #d8e2d5;border-radius:11px;padding:clamp(24px,3vw,38px)}
+.fh-config h2{font-size:clamp(25px,2.4vw,35px);letter-spacing:-.04em;margin:8px 0 15px}
+.fh-config>p:not(.eyebrow){font-size:14px;line-height:1.75;color:#53675c}
+.fh-model-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:25px 0 24px}
+.fh-option{background:#fff;border:1px solid #d0ddce;border-radius:6px;text-align:left;min-width:0;padding:17px 12px;display:flex;flex-direction:column;gap:8px}
+.fh-option span{font-size:clamp(17px,1.8vw,25px);font-weight:750;letter-spacing:-.04em;color:#173c30}
+.fh-option small{font-size:10px;color:#637467;white-space:nowrap;font-weight:650}
+.fh-option.active,.fh-option:hover{background:#163e32;border-color:#163e32}
+.fh-option.active span,.fh-option:hover span,.fh-option.active small,.fh-option:hover small{color:white}
+.fh-choice-display{border-top:1px solid #dee6db;border-bottom:1px solid #dee6db;padding:18px 0;margin-bottom:20px;display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.fh-choice-display>div{display:flex;flex-direction:column;gap:7px}
+.fh-choice-display small{font-size:10px;letter-spacing:.1em;color:#6e7f70}
+.fh-choice-display strong{font-size:25px;color:#173c30;letter-spacing:-.04em}
+.fh-config .fh-intro-note{font-size:12px!important;color:#607366;line-height:1.75}
+.fh-quote-link{width:100%;margin-top:11px}
+.fh-series-page .turbine-section{margin-top:55px}
+.fh-section-description{font-size:14px;line-height:1.8;color:#63776c;max-width:900px;margin:15px 0 24px}
+.fh-table-scroll{max-width:100%;overflow-x:auto}
+.fh-spec-table{width:100%;min-width:680px;margin:0 0 10px;border-collapse:collapse}
+.fh-spec-table th,.fh-spec-table td{padding:14px 15px;text-align:left;border-bottom:1px solid #dfe9df;font-size:13px}
+.fh-spec-table thead{background:#1a5141;color:white}
+.fh-spec-table thead th{font-weight:720}
+.fh-spec-table tbody tr:nth-child(2n){background:#edf4ed}
+.fh-spec-table tbody th{width:28%;font-weight:650}
+.fh-spec-table tbody td{color:#315344}
+.fh-series-page .feature-grid article{background:#edf2ea}
+@media(max-width:930px){.fh-hero{grid-template-columns:1fr}.fh-cover{min-height:370px}}
+@media(max-width:540px){.fh-model-options{gap:6px}.fh-option{padding:12px 8px}.fh-option span{font-size:18px}.fh-option small{font-size:9px}.fh-cover{min-height:340px}.fh-big-number{font-size:clamp(34px,9.4vw,55px)}.fh-pill-row span{font-size:9px}.fh-series-page .turbine-section{margin-top:38px}}
+
+/* Full-size, uncropped FH-series product gallery. */
+.fh-photo-loaded[hidden],#fh-photo-placeholder[hidden]{display:none!important}
+.fh-photo-main{width:100%;display:block;position:relative;overflow:hidden;padding:0;background:#f5f7f4;border:1px solid #dce5dc;border-radius:10px;cursor:zoom-in}
+.fh-photo-main img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:contain}
+.fh-photo-main span{position:absolute;bottom:14px;right:14px;background:#133b30e8;color:#fff;border-radius:5px;padding:9px 12px;font-size:12px}
+.fh-photo-thumbs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:9px;margin:12px 0}
+.fh-photo-thumb{display:block;min-width:0;padding:3px;border:2px solid transparent;border-radius:7px;background:#f0f4ef;cursor:pointer}
+.fh-photo-thumb img{display:block;width:100%;aspect-ratio:1/1;object-fit:contain}
+.fh-photo-thumb.active{border-color:#176849}
+.fh-photo-thumb:focus-visible,.fh-photo-main:focus-visible{outline:3px solid #1a7759;outline-offset:3px}
+.fh-photo-caption,.fh-compliance-note{font-size:12px;line-height:1.6;color:#65786b}
+.fh-compliance-note{margin:10px 0 0}
+@media(max-width:540px){.fh-photo-thumbs{grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}}
+
+/* Mobile-friendly FH model selector, image gallery and WhatsApp inquiry. */
+.fh-whatsapp-quote{display:flex;justify-content:center;align-items:center;width:100%;margin-top:10px;text-align:center}
+.fh-photo-main img{max-height:75vh;object-fit:contain}
+.fh-photo-thumbs{scroll-margin-top:20px}
+@media(max-width:600px){
+ .fh-series-page .turbine-detail{padding-left:16px;padding-right:16px}
+ .fh-hero{gap:22px;margin-top:18px}
+ .fh-hero-media h1{font-size:clamp(32px,9vw,44px)}
+ .fh-config{padding:20px 15px}
+ .fh-model-options{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+ .fh-option{padding:14px 7px;min-height:74px}
+ .fh-option span{font-size:clamp(16px,5vw,21px)}
+ .fh-choice-display strong{font-size:clamp(17px,5vw,23px)}
+ .fh-photo-main span{font-size:11px;bottom:8px;right:8px}
+ .fh-photo-thumbs{display:flex;overflow-x:auto;gap:8px;padding:4px 2px 10px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+ .fh-photo-thumb{flex:0 0 74px;scroll-snap-align:start}
+ .fh-quote-link,.fh-whatsapp-quote{min-height:48px}
+ .fh-table-scroll{overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
+}
