@@ -186,6 +186,8 @@ products.push({
   title:'FH Series 400W / 600W / 800W Wind Turbines',
   power:'400W–800W',voltage:'Confirm model',
   detailPage:'fh-400w-600w-800w-wind-turbines.html',
+  image:'assets/products/fh-series-01-main-poster.png',
+  imageAlt:'FH-400W / FH-600W / FH-800W supplier product data and power chart',
   description:'Independent FH-family product listing for FH-400W (400W), FH-600W (600W) and FH-800W (800W). Turbine axis orientation, rated voltage, electrical output, blade dimensions and technical performance are pending manufacturer confirmation.',
   specifications:[
     ['Model options','FH-400W / FH-600W / FH-800W'],
